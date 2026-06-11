@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Bebas+Neue&family=Space+Grotesk:wght@300..700&family=Syne+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0A0A0A;
+  --color-surface: #141414;
+  --color-lime: #C8FF00;
+  --color-pink: #FF2D78;
+  --color-violet: #7B2FFF;
+  --color-offwhite: #F0F0F0;
+  --color-muted: #888888;
+
+  --font-display: "Syne Mono", monospace;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-price: "Bebas Neue", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  --radius-none: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+}
+
+@layer base {
+  * {
+    border-radius: 0px !important;
+    cursor: none !important; /* Hide native cursor globally for desktop custom cursor */
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0A0A0A;
+    color: #F0F0F0;
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Scanlines overlay animation */
+  @keyframes scanline-anim {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  .scanlines-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(200, 255, 0, 0.03) 0px,
+      rgba(200, 255, 0, 0.03) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+    animation: scanline-anim 30s linear infinite;
+  }
+
+  /* Noise Overlay */
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.04;
+  }
+
+  /* Split flap flap animation style */
+  .split-flap-container {
+    perspective: 200px;
+  }
+}

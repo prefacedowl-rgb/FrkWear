@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRKWEAR | WE ARE THE NOISE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;family=Syne:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#e00363",
+                      "on-primary-fixed": "#161f00",
+                      "secondary-fixed": "#ffd9df",
+                      "tertiary-fixed-dim": "#d1bcff",
+                      "on-tertiary-container": "#782bfc",
+                      "on-tertiary-fixed": "#24005b",
+                      "background": "#131313",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-primary": "#4f6600",
+                      "primary-fixed-dim": "#a8d700",
+                      "outline": "#8e9479",
+                      "on-error": "#690005",
+                      "surface-bright": "#3a3939",
+                      "inverse-on-surface": "#313030",
+                      "on-surface": "#e5e2e1",
+                      "on-surface-variant": "#c4caac",
+                      "surface-dim": "#131313",
+                      "on-secondary-container": "#fff6f6",
+                      "tertiary": "#ffffff",
+                      "on-primary-container": "#546d00",
+                      "surface-variant": "#353534",
+                      "tertiary-fixed": "#eaddff",
+                      "surface-container": "#201f1f",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary-fixed-variant": "#3b4d00",
+                      "surface": "#131313",
+                      "surface-tint": "#a8d700",
+                      "error-container": "#93000a",
+                      "secondary-fixed-dim": "#ffb1c0",
+                      "on-tertiary-fixed-variant": "#5700c8",
+                      "primary-container": "#c0f500",
+                      "surface-container-highest": "#353534",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#434933",
+                      "on-tertiary": "#3d0090",
+                      "primary": "#ffffff",
+                      "tertiary-container": "#eaddff",
+                      "on-secondary-fixed": "#3f0017",
+                      "on-primary": "#273500",
+                      "secondary": "#ffb1c0",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-fixed-variant": "#90003d",
+                      "on-background": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "primary-fixed": "#c0f500",
+                      "on-secondary": "#660029"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "24px",
+                      "stack-lg": "48px",
+                      "margin-mobile": "20px",
+                      "unit": "4px",
+                      "gutter": "16px",
+                      "margin-desktop": "64px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "DM Sans"
+                      ],
+                      "display-hero-mobile": [
+                              "Syne"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "display-hero": [
+                              "Syne"
+                      ],
+                      "body-lg": [
+                              "DM Sans"
+                      ],
+                      "label-xl": [
+                              "Bebas Neue"
+                      ],
+                      "headline-md": [
+                              "Space Grotesk"
+                      ],
+                      "label-md": [
+                              "Bebas Neue"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "48px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "80px",
+                              {
+                                      "lineHeight": "80px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-xl": [
+                              "28px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glitch-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+        .glitch-pink {
+            color: #FF2D78;
+            transform: translateX(-3px);
+            z-index: -1;
+        }
+        .glitch-lime {
+            color: #C8FF00;
+            transform: translateX(3px);
+            z-index: -2;
+        }
+        
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background-color: #131313;
+            border-top: 1px solid #C8FF00;
+            border-bottom: 1px solid #C8FF00;
+            padding: 8px 0;
+            position: relative;
+        }
+        .ticker-content {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 20s linear infinite;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+        
+        .brutalist-button {
+            border: 2px solid #C8FF00;
+            background-color: #C8FF00;
+            color: #0A0A0A;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .brutalist-button:hover {
+            background-color: #0A0A0A;
+            color: #C8FF00;
+        }
+        .brutalist-button:hover::after {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            border: 2px solid #FF2D78;
+            animation: jitter 0.2s infinite alternate;
+            pointer-events: none;
+        }
+        @keyframes jitter {
+            0% { transform: translate(1px, 1px); }
+            100% { transform: translate(-1px, -1px); }
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md overflow-x-hidden pt-16">
+<!-- TopNavBar JSON Injection -->
+<nav class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-background border-b border-primary-fixed-dim dark:border-primary-fixed-dim">
+<div class="font-display-hero text-headline-lg uppercase text-primary dark:text-primary relative after:content-['FRKWEAR'] after:absolute after:-left-[2px] after:top-0 after:text-secondary-container after:opacity-50 before:content-['FRKWEAR'] before:absolute before:left-[2px] before:top-0 before:text-primary-fixed-dim before:opacity-50">
+            FRKWEAR
+        </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim" href="#">DROPS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim" href="#">VAULT</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim" href="#">COLLECTIONS</a>
+<a class="text-primary font-bold border-b-2 border-primary-fixed-dim pb-1 transition-all duration-100 hover:brightness-125" href="#">COMMUNITY</a>
+</div>
+<div class="flex gap-gutter items-center text-primary-fixed-dim dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined cursor-pointer hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+<span class="material-symbols-outlined cursor-pointer hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim" style="font-variation-settings: 'FILL' 0;">person</span>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex flex-col justify-center items-center px-margin-mobile md:px-margin-desktop pt-stack-lg pb-stack-md overflow-hidden bg-[#0A0A0A]">
+<div class="relative z-10 text-center mb-stack-md">
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero uppercase text-on-background relative inline-block">
+                    WE ARE THE NOISE.
+                    <span aria-hidden="true" class="glitch-layer glitch-pink font-display-hero text-display-hero-mobile md:text-display-hero uppercase">WE ARE THE NOISE.</span>
+<span aria-hidden="true" class="glitch-layer glitch-lime font-display-hero text-display-hero-mobile md:text-display-hero uppercase">WE ARE THE NOISE.</span>
+</h1>
+</div>
+<div class="w-full mt-auto">
+<div class="ticker-wrap">
+<div class="ticker-content font-label-md text-label-md text-primary-fixed-dim uppercase tracking-widest">
+<span class="px-8">EST. 2024 ★ NO INVENTORY. NO WASTE. ★</span>
+<span class="px-8">EST. 2024 ★ NO INVENTORY. NO WASTE. ★</span>
+<span class="px-8">EST. 2024 ★ NO INVENTORY. NO WASTE. ★</span>
+<span class="px-8">EST. 2024 ★ NO INVENTORY. NO WASTE. ★</span>
+<span class="px-8">EST. 2024 ★ NO INVENTORY. NO WASTE. ★</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Manifesto Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-4 flex justify-center md:justify-end">
+<span class="font-display-hero text-[160px] leading-none text-primary-fixed-dim opacity-80 select-none">"</span>
+</div>
+<div class="md:col-span-7 font-headline-lg text-headline-lg md:text-[40px] leading-tight text-on-background space-y-stack-sm">
+<p>WE REJECT THE CLEAN AESTHETIC.</p>
+<p class="text-on-surface-variant">WE BUILD IN THE VOID.</p>
+<p>WE WEAR THE GLITCH.</p>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop bg-surface-container-low border-t border-b border-[#353534]">
+<h2 class="font-label-xl text-label-xl text-primary-fixed-dim mb-stack-md uppercase">SYSTEM PROCESS</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative">
+<!-- Line connecting steps (desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-primary-fixed-dim opacity-30 -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-start bg-[#141414] p-stack-sm border border-primary-fixed-dim/30">
+<span class="font-label-xl text-[64px] leading-none text-primary-fixed-dim mb-unit">01</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">PICK DROP</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Select from the active terminal.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-start bg-[#141414] p-stack-sm border border-primary-fixed-dim/30">
+<span class="font-label-xl text-[64px] leading-none text-primary-fixed-dim mb-unit">02</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">PRINT</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">On-demand execution. Zero stock.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-start bg-[#141414] p-stack-sm border border-primary-fixed-dim/30">
+<span class="font-label-xl text-[64px] leading-none text-primary-fixed-dim mb-unit">03</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">SHIP</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Dispatched via secure nodes.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-start bg-[#141414] p-stack-sm border border-primary-fixed-dim/30">
+<span class="font-label-xl text-[64px] leading-none text-secondary-container mb-unit">04</span>
+<h3 class="font-headline-md text-headline-md text-secondary-container mb-unit">BREAK NECKS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Deploy in meatspace.</p>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop">
+<h2 class="font-label-xl text-label-xl text-primary-fixed-dim mb-stack-md uppercase">CORE DIRECTIVES</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Value 1 -->
+<div class="bg-[#141414] p-stack-md border border-primary-fixed-dim/30 flex gap-stack-sm items-start hover:border-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[40px]" style="font-variation-settings: 'FILL' 0;">recycling</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">ANTI-WASTE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We print what you buy. The era of overproduction is dead. Burn the surplus mentality.</p>
+</div>
+</div>
+<!-- Value 2 -->
+<div class="bg-[#141414] p-stack-md border border-primary-fixed-dim/30 flex gap-stack-sm items-start hover:border-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[40px]" style="font-variation-settings: 'FILL' 0;">bolt</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">RAW ENERGY</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Designed for the hyper-connected. Glitch aesthetics born from screen fatigue.</p>
+</div>
+</div>
+<!-- Value 3 -->
+<div class="bg-[#141414] p-stack-md border border-primary-fixed-dim/30 flex gap-stack-sm items-start hover:border-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[40px]" style="font-variation-settings: 'FILL' 0;">lock_open</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">OPEN SOURCE MINDSET</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Community driven drops. Your voice shapes the next collection.</p>
+</div>
+</div>
+<!-- Value 4 -->
+<div class="bg-[#141414] p-stack-md border border-primary-fixed-dim/30 flex gap-stack-sm items-start hover:border-primary-fixed-dim transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[40px]" style="font-variation-settings: 'FILL' 0;">warning</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">UNAPOLOGETIC</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">No corporate clean-up. No beige. We are loud, dark, and radioactive.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-secondary-container py-stack-lg px-margin-mobile md:px-margin-desktop text-center border-t-2 border-b-2 border-[#0A0A0A]">
+<h2 class="font-display-hero text-display-hero-mobile md:text-display-hero text-[#0A0A0A] uppercase mb-stack-md leading-none">READY TO WEAR SOMETHING REAL?</h2>
+<button class="brutalist-button font-label-xl text-label-xl px-stack-md py-stack-sm uppercase">
+                INITIALIZE SECONDS <span class="material-symbols-outlined align-middle ml-unit text-[24px]">arrow_forward</span>
+</button>
+</section>
+</main>
+<!-- Footer JSON Injection -->
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full py-stack-lg px-margin-mobile md:px-margin-desktop bg-background border-t border-primary-fixed-dim dark:border-primary-fixed-dim">
+<div class="md:col-span-1">
+<span class="font-display-hero text-headline-lg text-primary dark:text-primary uppercase tracking-tighter">FRKWEAR</span>
+</div>
+<div class="md:col-span-2 flex flex-wrap gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">TERMS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">PRIVACY</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">SHIPPING</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">RETURNS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">CONTACT</a>
+</div>
+<div class="md:col-span-1 text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md flex md:justify-end items-end">
+            ©2024 FRKWEAR VOID-SYSTEMS ALL RIGHTS RESERVED
+        </div>
+</footer>
+</body></html>

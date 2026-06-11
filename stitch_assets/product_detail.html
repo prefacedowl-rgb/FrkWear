@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRKWEAR | Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;family=Syne:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e00363",
+                        "on-primary-fixed": "#161f00",
+                        "secondary-fixed": "#ffd9df",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-tertiary-container": "#782bfc",
+                        "on-tertiary-fixed": "#24005b",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#4f6600",
+                        "primary-fixed-dim": "#a8d700",
+                        "outline": "#8e9479",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3939",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4caac",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#fff6f6",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#546d00",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#eaddff",
+                        "surface-container": "#201f1f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "surface": "#131313",
+                        "surface-tint": "#a8d700",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb1c0",
+                        "on-tertiary-fixed-variant": "#5700c8",
+                        "primary-container": "#c0f500",
+                        "surface-container-highest": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#434933",
+                        "on-tertiary": "#3d0090",
+                        "primary": "#ffffff",
+                        "tertiary-container": "#eaddff",
+                        "on-secondary-fixed": "#3f0017",
+                        "on-primary": "#273500",
+                        "secondary": "#ffb1c0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#90003d",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#c0f500",
+                        "on-secondary": "#660029"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "display-hero-mobile": ["Syne"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-hero": ["Syne"],
+                        "body-lg": ["DM Sans"],
+                        "label-xl": ["Bebas Neue"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-md": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["80px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-xl": ["28px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["18px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glitch-text {
+            position: relative;
+        }
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -1px 0 #C8FF00;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -1px 0 #FF2D78;
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim-1 {
+            0% { clip-path: inset(20% 0 80% 0); }
+            20% { clip-path: inset(60% 0 10% 0); }
+            40% { clip-path: inset(40% 0 50% 0); }
+            60% { clip-path: inset(80% 0 5% 0); }
+            80% { clip-path: inset(10% 0 70% 0); }
+            100% { clip-path: inset(30% 0 20% 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(10% 0 60% 0); }
+            20% { clip-path: inset(30% 0 20% 0); }
+            40% { clip-path: inset(70% 0 10% 0); }
+            60% { clip-path: inset(20% 0 50% 0); }
+            80% { clip-path: inset(50% 0 30% 0); }
+            100% { clip-path: inset(5% 0 80% 0); }
+        }
+        .scanline {
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+            background-size: 100% 4px;
+        }
+        
+        /* Custom Scrollbar for brutalist feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C8FF00;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pt-16">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-background border-b border-primary-fixed-dim dark:border-primary-fixed-dim flat no shadows text-primary-fixed-dim dark:text-primary-fixed-dim Headlines: font-display-hero text-display-hero-mobile. Labels: font-label-md text-label-md. Body: font-body-md text-body-md.">
+<!-- Brand Logo -->
+<a class="font-display-hero text-headline-lg uppercase text-primary dark:text-primary relative after:content-['FRKWEAR'] after:absolute after:-left-[2px] after:top-0 after:text-secondary-container after:opacity-50 before:content-['FRKWEAR'] before:absolute before:left-[2px] before:top-0 before:text-primary-fixed-dim before:opacity-50" href="#">
+            FRKWEAR
+        </a>
+<!-- Navigation Links (Web) -->
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75" href="#">DROPS</a>
+<a class="text-primary font-bold border-b-2 border-primary-fixed-dim pb-1 hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim" href="#">VAULT</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75" href="#">COLLECTIONS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75" href="#">COMMUNITY</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-stack-sm">
+<button class="hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75 active:transition-all active:duration-100 active:hover:brightness-125">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75 active:transition-all active:duration-100 active:hover:brightness-125 relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-secondary-container text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-label-md">2</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg mt-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- LEFT: Images -->
+<div class="flex flex-col gap-stack-md">
+<!-- Main Image -->
+<div class="relative w-full aspect-[3/4] bg-surface-container border border-primary-fixed-dim overflow-hidden group">
+<img alt="Product Image" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500" data-alt="A gritty, high-fashion editorial shot of a distressed, dark streetwear hoodie with glowing neon green accents. The model is standing in a raw concrete industrial space. Harsh, directional white lighting casts deep shadows, emphasizing the brutalist, glitch-core aesthetic. The scene feels chaotic and futuristic, true to Y2K cyberpunk vibes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGRWNDbp29tOHN5w3kfQg2BirdOuhmkM1J9MPMiiB1cOpVCfMfq48NJQP9XlsFpjSJFQaIe8r-nP3mYk5KqNlw-ueMgC0SBKc1L5mgS-BK8WVCJUYVQVwOp826yyhVTgIUDDg8bgn3wXE-o9YGQ52ORyi1q69Jjim2n3rPnITN04Fu_uhynb5XbdyrrnXAkdXSI18Xalk0VroN58v2YqC8HmpKQnsl6fdT6cwmlMLkIuGGjLxsiIW5ZTcqcTJ9QBH7Y8Pg7VZW-g4"/>
+<div class="absolute inset-0 scanline pointer-events-none opacity-30"></div>
+<!-- Pink Badge -->
+<div class="absolute top-4 left-4 bg-secondary-container text-[#0A0A0A] font-label-md text-label-md px-3 py-1 border border-[#0A0A0A] uppercase tracking-wider transform -skew-x-6 z-10 shadow-[2px_2px_0px_#C8FF00]">
+                        LIMITED RUN
+                    </div>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-stack-sm">
+<div class="aspect-square bg-surface-container border border-primary-fixed-dim cursor-pointer relative overflow-hidden opacity-100">
+<img alt="Thumb 1" class="w-full h-full object-cover filter grayscale contrast-125" data-alt="Detail shot of the distressed fabric and neon green stitching on a dark streetwear hoodie. High contrast, brutalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA35mApIfNZQOXaR5LlEjkFMlrzMgz6pU9XYIz1mFrmfnpIGZ0qbQ3hhIeIg_jq6l3r6qy5FgZbQGCX6h0dpUcGrGMUkrtVYwqL0BFxHV_osgHjfykZM6oiqQjfQfbViqFojCefNTNBoEkwsTBNEqxHZFqbNCkNKx2N8GwVNkSrahDndoqESh_RKqLchO-I7nVWbKXzFR88Jwr_GckP2sNzbl9XfMJiNbzq8wy5jEm1yWlx0BPfOodlD6tOXlfuY6-oTXsO143i5k"/>
+<div class="absolute inset-0 border-2 border-primary-container pointer-events-none"></div>
+</div>
+<div class="aspect-square bg-surface-container border border-surface-variant cursor-pointer relative overflow-hidden opacity-50 hover:opacity-100 transition-opacity">
+<img alt="Thumb 2" class="w-full h-full object-cover filter grayscale contrast-125" data-alt="Back view of a model wearing a distressed dark streetwear hoodie with chaotic Y2K graphics. Gritty concrete background, harsh lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyqBx7_H-577QAILPOfJo4S9WrEUJkk2Eu9ozcUemz_Am4vFOFETP_F563-T3oJIvwuJEHEqJXChOMb7hYAn0DFJeVNYbFl3gE_eweFSHoGMw1s0EFynCH_yNqz_qv1LYqTtoevmZ_EgfqHQ4Go1fkwElJANLv51dgv9iU_didZD1HasLyOmuwnrn9ptpvX2czvG4RgZaJs6_XdLnxXB35PNRIpjmS_d2PBkO0JB4KjM128wsTicuYAhR0o1AbWmxvUYlETn8XBEA"/>
+</div>
+<div class="aspect-square bg-surface-container border border-surface-variant cursor-pointer relative overflow-hidden opacity-50 hover:opacity-100 transition-opacity">
+<img alt="Thumb 3" class="w-full h-full object-cover filter grayscale contrast-125" data-alt="Close up of a heavy metal zipper and raw edge finishing on a dark cyberpunk streetwear garment. High contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrPy7XTBcAvM3r3IC1xxo6p1SSunXma3GN-lHkXXhdgKg678iOH_0PX-2km192yYqI8XEDNbKLrsRQCDGmyD3YDW5uwtqIWwUl5u65QcZRTVrVg_BWPw_tZ4O4np__ikoZRdRud5uIc8ev85A__0tPT9CXNwH9E4VoomQ1KWbcE48iorkFi38QWICYi1hVJmTCy0tWtPkh3iiviYgEqUsyX1U6y-3uiT5zqoUO-GjAV7PCmQNFWFdWreMnLZ8e_ldDL-Aw1MDAdrc"/>
+</div>
+<div class="aspect-square bg-surface-container border border-surface-variant flex items-center justify-center cursor-pointer hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">play_circle</span>
+</div>
+</div>
+</div>
+<!-- RIGHT: Details & Actions -->
+<div class="flex flex-col gap-stack-md">
+<!-- Headers -->
+<div>
+<!-- Category Pill -->
+<div class="inline-block bg-[#0A0A0A] border border-secondary-container text-secondary-container font-body-md text-xs font-bold px-2 py-1 mb-3 uppercase tracking-wider">
+                        OUTERWEAR // HOODIES
+                    </div>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface uppercase leading-none glitch-text mb-2" data-text="VOID WALKER HOODIE">
+                        VOID WALKER HOODIE
+                    </h1>
+<div class="font-label-xl text-[48px] text-primary-container leading-none mt-4">
+                        $185.00
+                    </div>
+</div>
+<!-- Selectors -->
+<div class="space-y-6">
+<!-- Color -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-2 uppercase">Color // <span class="text-on-surface">OBSIDIAN</span></h3>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-[#1A1A1A] border-2 border-primary-container ring-2 ring-primary-container ring-offset-2 ring-offset-background"></button>
+<button class="w-10 h-10 rounded-full bg-[#4A4A4A] border border-surface-variant hover:border-on-surface transition-colors"></button>
+<button class="w-10 h-10 rounded-full bg-[#E00363] border border-surface-variant hover:border-on-surface transition-colors"></button>
+</div>
+</div>
+<!-- Size -->
+<div>
+<div class="flex justify-between items-end mb-2">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase">Size</h3>
+<a class="font-body-md text-xs text-primary-fixed-dim underline hover:text-secondary-container transition-colors" href="#">SIZE GUIDE</a>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="py-3 border border-surface-variant bg-[#0A0A0A] font-label-md text-on-surface hover:border-primary-fixed-dim transition-colors uppercase">S</button>
+<button class="py-3 border-2 border-primary-container bg-[#0A0A0A] font-label-md text-primary-container uppercase shadow-[2px_2px_0px_#C8FF00]">M</button>
+<button class="py-3 border border-surface-variant bg-[#0A0A0A] font-label-md text-on-surface hover:border-primary-fixed-dim transition-colors uppercase">L</button>
+<button class="py-3 border border-surface-variant bg-[#0A0A0A] font-label-md text-on-surface hover:border-primary-fixed-dim transition-colors uppercase relative overflow-hidden">
+<span class="relative z-10">XL</span>
+<div class="absolute inset-0 bg-surface-container opacity-50 pointer-events-none"></div>
+<div class="absolute inset-0 border-t border-surface-variant top-1/2 -rotate-45"></div>
+</button>
+</div>
+</div>
+</div>
+<!-- CTAs -->
+<div class="flex flex-col gap-4 mt-4">
+<button class="w-full py-4 bg-primary-container text-[#0A0A0A] font-label-xl text-label-xl uppercase border-2 border-primary-container hover:bg-[#0A0A0A] hover:text-primary-container transition-all duration-200 transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_#E00363] active:translate-y-0 active:shadow-none">
+                        ADD TO CART
+                    </button>
+<button class="w-full py-4 bg-[#0A0A0A] text-secondary-container font-label-xl text-label-xl uppercase border-2 border-secondary-container hover:bg-secondary-container hover:text-[#0A0A0A] transition-all duration-200 transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_#C8FF00] active:translate-y-0 active:shadow-none flex items-center justify-center gap-2">
+                        BUY IT NOW
+                        <span class="material-symbols-outlined text-[24px]">bolt</span>
+</button>
+</div>
+<!-- Accordion Tabs -->
+<div class="mt-8 border-t border-primary-fixed-dim">
+<!-- Tab 1 -->
+<div class="border-b border-primary-fixed-dim group">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon').textContent = this.querySelector('.icon').textContent === 'add' ? 'remove' : 'add';">
+<span class="font-headline-lg text-headline-md text-on-surface uppercase tracking-tight group-hover:text-primary-fixed-dim transition-colors">DESCRIPTION</span>
+<span class="material-symbols-outlined icon text-primary-fixed-dim">remove</span>
+</button>
+<div class="pb-6 pt-2 font-body-md text-body-md text-on-surface-variant space-y-4 pr-8">
+<p>Engineered for the urban void. The Void Walker Hoodie features a heavy-weight 500gsm distressed cotton blend, raw hems, and an oversized drop-shoulder fit. Subtle tonal glitch-printing on the back activates under flash.</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>500gsm Heavyweight Cotton/Poly blend</li>
+<li>Raw edge detailing on cuffs and hem</li>
+<li>Oversized, boxy fit</li>
+<li>Flash-reactive tonal print</li>
+</ul>
+</div>
+</div>
+<!-- Tab 2 -->
+<div class="border-b border-primary-fixed-dim group">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon').textContent = this.querySelector('.icon').textContent === 'add' ? 'remove' : 'add';">
+<span class="font-headline-lg text-headline-md text-on-surface uppercase tracking-tight group-hover:text-primary-fixed-dim transition-colors">CARE // SPECS</span>
+<span class="material-symbols-outlined icon text-primary-fixed-dim">add</span>
+</button>
+<div class="pb-6 pt-2 font-body-md text-body-md text-on-surface-variant hidden">
+<p>Machine wash cold. Inside out. Do not tumble dry. Embrace the fade—distress is intentional and will evolve with wear.</p>
+</div>
+</div>
+<!-- Tab 3 -->
+<div class="border-b border-primary-fixed-dim group">
+<button class="w-full py-4 flex justify-between items-center text-left focus:outline-none" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.icon').textContent = this.querySelector('.icon').textContent === 'add' ? 'remove' : 'add';">
+<span class="font-headline-lg text-headline-md text-on-surface uppercase tracking-tight group-hover:text-primary-fixed-dim transition-colors">SHIPPING</span>
+<span class="material-symbols-outlined icon text-primary-fixed-dim">add</span>
+</button>
+<div class="pb-6 pt-2 font-body-md text-body-md text-on-surface-variant hidden">
+<p>Standard transmission: 3-5 business days.<br/>Express routing: 1-2 business days.<br/>International routing varies by sector.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- UPSELL SECTION -->
+<section class="mt-24 mb-12 border-t border-surface-variant pt-12">
+<h2 class="font-display-hero text-headline-lg text-on-surface uppercase mb-8 glitch-text" data-text="PAIR IT WITH">PAIR IT WITH</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-[#141414] border border-primary-fixed-dim border-opacity-30 group cursor-pointer hover:border-opacity-100 transition-colors p-2">
+<div class="aspect-[3/4] bg-surface-container mb-4 overflow-hidden relative">
+<img alt="Upsell 1" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="Wide-leg distressed black cargo pants with excessive straps and metal hardware. High-contrast studio lighting, dark brutalist fashion aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaseLaKHjnI37oOhzNbM4tR5MmA1RT4HNQU1ZzLv6cRZwLrsObNdn_KAxcHN4KDmqIaXLpsnDW4dkMIUzXfUHRqT4mbFAIzcDWQUZ2UoTudgKANJJ2CIGsjB4Ftrg-HpoH5q75G6mkJbYeO7-P-lXqRJiLl26hTbXcSopMNtGNJFSpGNNyvsY3H4DKN3-VVPGSROAzD_Uya4-YCCVwn7vJCHYtuwdp4hmJZoeQkGc4p0V9RYCSPRTq3pKCueo3RpBVmmQwTD5ueB0"/>
+<div class="absolute inset-0 scanline opacity-20 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-lg text-lg text-on-surface uppercase truncate">SYS_ERROR CARGOS</h4>
+<p class="font-label-md text-primary-fixed-dim">$140.00</p>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-[#141414] border border-primary-fixed-dim border-opacity-30 group cursor-pointer hover:border-opacity-100 transition-colors p-2">
+<div class="aspect-[3/4] bg-surface-container mb-4 overflow-hidden relative">
+<img alt="Upsell 2" class="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition-transform duration-500" data-alt="Chunky, brutalist platform sneakers in stark black and white. Studio shot, high contrast, cyberpunk footwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoo_TMNNMuo8YuMD2_LTeNf2q_k-duSdWfvkv7qWLX2TRppJ-Uf3L8n90rklczFsoBYlKXlFIkWGE6wV1C7drVZ0ge18DwKPeSHxhnWcsKAohSGmNaBfgga9chO5rRAmtrjoSTkU3jj3-WUQYpGqP9eHYfR-p90Uro-r3GQNUUCy8GKRszlUl_0NhVyOhlvrqkeYOoOAgy7LTrq41wD4Le5oU3nudImj8WhH_LZepHBjQ-Nya145rHvwPRh8n-iX2ikDdJmWQ8ig8"/>
+<div class="absolute inset-0 scanline opacity-20 pointer-events-none"></div>
+</div>
+<h4 class="font-headline-lg text-lg text-on-surface uppercase truncate">STOMP_V2 BOOTS</h4>
+<p class="font-label-md text-primary-fixed-dim">$220.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full py-stack-lg px-margin-mobile md:px-margin-desktop bg-background border-t border-primary-fixed-dim dark:border-primary-fixed-dim flat no shadows text-primary-fixed-dim dark:text-primary-fixed-dim Headlines: font-display-hero text-headline-md. Labels: font-label-xl text-label-xl. Body: font-body-md text-body-md.">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<span class="font-display-hero text-headline-lg text-primary dark:text-primary uppercase tracking-tighter">FRKWEAR</span>
+<p class="text-on-surface-variant font-body-md text-xs mt-auto">©2024 FRKWEAR VOID-SYSTEMS ALL RIGHTS RESERVED</p>
+</div>
+<div class="col-span-1 flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">TERMS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">PRIVACY</a>
+</div>
+<div class="col-span-1 flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">SHIPPING</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">RETURNS</a>
+</div>
+<div class="col-span-1 flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">CONTACT</a>
+</div>
+</footer>
+</body></html>

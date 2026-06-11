@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRKWEAR | HIT US UP</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;family=Syne:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e00363",
+                        "on-primary-fixed": "#161f00",
+                        "secondary-fixed": "#ffd9df",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-tertiary-container": "#782bfc",
+                        "on-tertiary-fixed": "#24005b",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#4f6600",
+                        "primary-fixed-dim": "#a8d700",
+                        "outline": "#8e9479",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3939",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4caac",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#fff6f6",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#546d00",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#eaddff",
+                        "surface-container": "#201f1f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "surface": "#131313",
+                        "surface-tint": "#a8d700",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb1c0",
+                        "on-tertiary-fixed-variant": "#5700c8",
+                        "primary-container": "#c0f500",
+                        "surface-container-highest": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#434933",
+                        "on-tertiary": "#3d0090",
+                        "primary": "#ffffff",
+                        "tertiary-container": "#eaddff",
+                        "on-secondary-fixed": "#3f0017",
+                        "on-primary": "#273500",
+                        "secondary": "#ffb1c0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#90003d",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#c0f500",
+                        "on-secondary": "#660029"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "display-hero-mobile": ["Syne"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-hero": ["Syne"],
+                        "body-lg": ["DM Sans"],
+                        "label-xl": ["Bebas Neue"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-md": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["80px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-xl": ["28px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["18px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Digital Brutalism & Glitch Specific Styles */
+        body {
+            background-image: radial-gradient(circle at center, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+
+        .glitch-header {
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch-header::before,
+        .glitch-header::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .glitch-header::before {
+            left: 3px;
+            text-shadow: -2px 0 theme('colors.secondary-container');
+            clip-path: inset(20% 0 80% 0);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        .glitch-header::after {
+            left: -3px;
+            text-shadow: 2px 0 theme('colors.primary-fixed');
+            clip-path: inset(80% 0 10% 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip-path: inset(20% 0 80% 0); transform: translate(0); }
+            20% { clip-path: inset(60% 0 10% 0); transform: translate(-2px, 1px); }
+            40% { clip-path: inset(40% 0 50% 0); transform: translate(2px, -1px); }
+            60% { clip-path: inset(80% 0 5% 0); transform: translate(-1px, 2px); }
+            80% { clip-path: inset(10% 0 70% 0); transform: translate(1px, -2px); }
+            100% { clip-path: inset(30% 0 50% 0); transform: translate(0); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(10% 0 60% 0); transform: translate(0); }
+            20% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -1px); }
+            40% { clip-path: inset(30% 0 40% 0); transform: translate(-2px, 1px); }
+            60% { clip-path: inset(50% 0 30% 0); transform: translate(1px, 2px); }
+            80% { clip-path: inset(5% 0 80% 0); transform: translate(-1px, -2px); }
+            100% { clip-path: inset(70% 0 20% 0); transform: translate(0); }
+        }
+
+        /* Brutalist Forms */
+        .brutalist-input {
+            background-color: theme('colors.surface-container-lowest');
+            border: 1px solid theme('colors.outline');
+            color: theme('colors.on-surface');
+            transition: all 0.1s ease;
+            border-radius: 0;
+        }
+
+        .brutalist-input:focus {
+            outline: none;
+            border-color: theme('colors.secondary-container');
+            box-shadow: 3px 3px 0px 0px theme('colors.secondary-container');
+            transform: translate(-1px, -1px);
+        }
+
+        /* Brutalist Buttons */
+        .brutalist-btn {
+            background-color: theme('colors.primary-fixed');
+            color: theme('colors.on-primary-fixed');
+            border: 2px solid theme('colors.primary-fixed');
+            border-radius: 0;
+            transition: all 0.1s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brutalist-btn:hover {
+            background-color: theme('colors.surface-container-lowest');
+            color: theme('colors.primary-fixed');
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px 0px theme('colors.primary-fixed');
+        }
+
+        .brutalist-btn:active {
+            transform: translate(0, 0);
+            box-shadow: none;
+        }
+
+        /* Cards */
+        .brutalist-card {
+            background-color: theme('colors.surface-container-lowest');
+            border: 1px solid rgba(168, 215, 0, 0.3); /* primary-fixed-dim / 30% */
+            transition: all 0.2s ease;
+            border-radius: 0;
+        }
+
+        .brutalist-card:hover {
+            border-color: theme('colors.primary-fixed');
+            background-color: theme('colors.surface-container');
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: theme('colors.background'); }
+        ::-webkit-scrollbar-thumb { background: theme('colors.surface-variant'); }
+        ::-webkit-scrollbar-thumb:hover { background: theme('colors.primary-fixed-dim'); }
+    </style>
+</head>
+<body class="bg-background dark:bg-background text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- TopNavBar (JSON Shared Component) -->
+<nav class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-background border-b border-primary-fixed-dim dark:border-primary-fixed-dim">
+<a class="font-display-hero text-headline-lg uppercase text-primary dark:text-primary relative after:content-['FRKWEAR'] after:absolute after:-left-[2px] after:top-0 after:text-secondary-container after:opacity-50 before:content-['FRKWEAR'] before:absolute before:left-[2px] before:top-0 before:text-primary-fixed-dim before:opacity-50 hover:skew-x-2 transition-transform duration-75" href="#">
+            FRKWEAR
+        </a>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim transition-all duration-100 hover:brightness-125 hover:skew-x-2" href="#">DROPS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim transition-all duration-100 hover:brightness-125 hover:skew-x-2" href="#">VAULT</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim transition-all duration-100 hover:brightness-125 hover:skew-x-2" href="#">COLLECTIONS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim transition-all duration-100 hover:brightness-125 hover:skew-x-2" href="#">COMMUNITY</a>
+</div>
+<div class="flex items-center gap-gutter text-primary-fixed-dim dark:text-primary-fixed-dim">
+<button class="hover:text-primary-fixed-dim transition-transform duration-75 hover:skew-x-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="hover:text-primary-fixed-dim transition-transform duration-75 hover:skew-x-2">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow pt-32 pb-24 px-margin-mobile md:px-margin-desktop flex flex-col gap-stack-lg relative z-10 overflow-hidden">
+<!-- Header -->
+<header class="mb-stack-md">
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero uppercase text-on-surface m-0 tracking-tighter glitch-header" data-text="HIT US UP">
+                HIT US UP
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit uppercase tracking-widest border-l-2 border-secondary-container pl-unit">
+                System override &gt; Initiate comms protocol //
+            </p>
+</header>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg items-start">
+<!-- Left: Contact Form -->
+<div class="lg:col-span-7 flex flex-col gap-stack-md w-full relative">
+<!-- Glitch accent box -->
+<div class="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-primary-fixed-dim opacity-50 pointer-events-none hidden md:block"></div>
+<form class="flex flex-col gap-stack-sm w-full">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase" for="name">Designation (Name)</label>
+<input class="brutalist-input p-3 font-body-md text-body-md w-full" id="name" placeholder="John Doe_" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-md text-label-md text-on-surface uppercase" for="email">Comms Link (Email)</label>
+<input class="brutalist-input p-3 font-body-md text-body-md w-full" id="email" placeholder="void@system.net" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<label class="font-label-md text-label-md text-on-surface uppercase" for="subject">Subject Vector</label>
+<select class="brutalist-input p-3 font-body-md text-body-md w-full appearance-none" id="subject">
+<option>Order Status / Tracking</option>
+<option>Returns / Glitched Items</option>
+<option>Collab / Propaganda</option>
+<option>General Static</option>
+</select>
+</div>
+<div class="flex flex-col gap-1 mt-2">
+<label class="font-label-md text-label-md text-on-surface uppercase" for="message">Transmission Data</label>
+<textarea class="brutalist-input p-3 font-body-md text-body-md w-full resize-y" id="message" placeholder="Enter coordinates or issue..." rows="6"></textarea>
+</div>
+<button class="brutalist-btn mt-4 p-4 font-label-xl text-label-xl uppercase flex items-center justify-center gap-2" type="button">
+<span>Transmit Signal</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+<!-- Right: Contact Cards -->
+<div class="lg:col-span-5 flex flex-col gap-stack-sm h-full justify-center">
+<a class="brutalist-card p-6 flex items-start gap-4 group decoration-none" href="#">
+<div class="p-3 bg-surface border border-outline group-hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim">mail</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-1">Direct Mail</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">support@frkwear.void</p>
+<span class="font-label-md text-label-md text-secondary-container mt-2 opacity-0 group-hover:opacity-100 transition-opacity uppercase">Initialize &gt;&gt;</span>
+</div>
+</a>
+<a class="brutalist-card p-6 flex items-start gap-4 group decoration-none" href="#">
+<div class="p-3 bg-surface border border-outline group-hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim">photo_camera</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-1">Visual Feed</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">@frkwear_sys</p>
+<span class="font-label-md text-label-md text-secondary-container mt-2 opacity-0 group-hover:opacity-100 transition-opacity uppercase">Connect &gt;&gt;</span>
+</div>
+</a>
+<a class="brutalist-card p-6 flex items-start gap-4 group decoration-none" href="#">
+<div class="p-3 bg-surface border border-outline group-hover:border-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-primary-fixed-dim">chat</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface uppercase mb-1">Encrypted Chat</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">WhatsApp Support Line</p>
+<span class="font-label-md text-label-md text-secondary-container mt-2 opacity-0 group-hover:opacity-100 transition-opacity uppercase">Ping &gt;&gt;</span>
+</div>
+</a>
+</div>
+</div>
+<!-- FAQ Section -->
+<div class="mt-stack-lg pt-stack-md relative">
+<h2 class="font-display-hero text-headline-lg uppercase text-on-surface mb-stack-md flex items-center gap-4">
+<span class="w-8 h-1 bg-primary-fixed-dim"></span>
+                SYSTEM_FAQ
+            </h2>
+<div class="flex flex-col border-t border-surface-variant">
+<!-- FAQ Item 1 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">Where is my tracking data?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">Tracking nodes are uploaded to your comms link (email) within 24-48 hours of dispatch. If the signal is lost, check your spam filters before pinging support.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">Do you ship worldwide?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">We establish drops in most global sectors. Certain restricted zones may require alternate logistics. Enter your coordinates at checkout to verify grid access.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">How do returns function in this sector?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">Defective or incompatible hardware can be returned within 14 cycles (days) of receipt. Items must be unworn with original tactical tags attached. Contact support to initiate a return vector.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">Restock protocols?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">Most physical drops are finite. Once a collection is depleted, it is archived to the VAULT. Rarely, highly demanded assets may see a secondary protocol run. Subscribe to the feed to stay alerted.</p>
+</div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">Sizing algorithms?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">Our gear follows a standard oversized, brutalist fit. Review the measurement matrix attached to each product module for exact specifications before compiling your order.</p>
+</div>
+</div>
+<!-- FAQ Item 6 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">Can I cancel a transmission (order)?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">Orders are locked into the processing matrix rapidly. You have a 1-hour window to submit an override request via direct mail. Post-window cancellations are not guaranteed.</p>
+</div>
+</div>
+<!-- FAQ Item 7 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">Accepted currency types?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">We interface with major credit modules, standard digital wallets (Apple/Google Pay), and select verified crypto-assets. Options are dynamically rendered at checkout.</p>
+</div>
+</div>
+<!-- FAQ Item 8 -->
+<div class="faq-item border-b border-surface-variant">
+<button aria-expanded="false" class="faq-button w-full py-4 flex justify-between items-center text-left hover:bg-surface-container-lowest transition-colors group">
+<span class="font-headline-md text-headline-md text-on-surface pr-4 group-hover:text-primary-fixed-dim transition-colors">Item arrived glitched (damaged)?</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-90 transition-transform">add</span>
+</button>
+<div class="faq-content hidden pb-6 pr-12">
+<p class="font-body-md text-body-md text-on-surface-variant">If your hardware arrives with un-designed errors, ping support immediately with visual proof. We will route a replacement or execute a full refund protocol.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (JSON Shared Component) -->
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full py-stack-lg px-margin-mobile md:px-margin-desktop bg-background border-t border-primary-fixed-dim dark:border-primary-fixed-dim z-50 relative mt-auto">
+<div class="md:col-span-1 flex flex-col gap-unit">
+<span class="font-display-hero text-headline-lg text-primary dark:text-primary uppercase tracking-tighter">FRKWEAR</span>
+<p class="font-body-md text-body-md text-primary-fixed-dim dark:text-primary-fixed-dim mt-2 opacity-80">
+                ©2024 FRKWEAR VOID-SYSTEMS ALL RIGHTS RESERVED
+            </p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-x-gutter gap-y-stack-sm md:justify-end items-start">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">TERMS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">PRIVACY</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">SHIPPING</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">RETURNS</a>
+<a class="text-primary underline font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">CONTACT</a>
+</div>
+</footer>
+<script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.material-symbols-outlined');
+                const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+                // Close all others
+                document.querySelectorAll('.faq-button').forEach(otherBtn => {
+                    if (otherBtn !== btn) {
+                        otherBtn.setAttribute('aria-expanded', 'false');
+                        otherBtn.nextElementSibling.classList.add('hidden');
+                        otherBtn.querySelector('.material-symbols-outlined').textContent = 'add';
+                    }
+                });
+
+                if (isExpanded) {
+                    btn.setAttribute('aria-expanded', 'false');
+                    content.classList.add('hidden');
+                    icon.textContent = 'add';
+                } else {
+                    btn.setAttribute('aria-expanded', 'true');
+                    content.classList.remove('hidden');
+                    icon.textContent = 'remove';
+                }
+            });
+        });
+    </script>
+</body></html>

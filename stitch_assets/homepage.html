@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRKWEAR | WEAR THE STATIC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,700&amp;family=Space+Grotesk:wght@400;700&amp;family=Syne:wght@400;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e00363",
+                        "on-primary-fixed": "#161f00",
+                        "secondary-fixed": "#ffd9df",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-tertiary-container": "#782bfc",
+                        "on-tertiary-fixed": "#24005b",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#4f6600",
+                        "primary-fixed-dim": "#a8d700",
+                        "outline": "#8e9479",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3939",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4caac",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#fff6f6",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#546d00",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#eaddff",
+                        "surface-container": "#201f1f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "surface": "#131313",
+                        "surface-tint": "#a8d700",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb1c0",
+                        "on-tertiary-fixed-variant": "#5700c8",
+                        "primary-container": "#c0f500",
+                        "surface-container-highest": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#434933",
+                        "on-tertiary": "#3d0090",
+                        "primary": "#ffffff",
+                        "tertiary-container": "#eaddff",
+                        "on-secondary-fixed": "#3f0017",
+                        "on-primary": "#273500",
+                        "secondary": "#ffb1c0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#90003d",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#c0f500",
+                        "on-secondary": "#660029"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "display-hero-mobile": ["Syne"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-hero": ["Syne"],
+                        "body-lg": ["DM Sans"],
+                        "label-xl": ["Bebas Neue"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-md": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["80px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-xl": ["28px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["18px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glitch-text {
+            position: relative;
+        }
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        .glitch-text::before {
+            left: -3px;
+            text-shadow: -2px 0 #FF2D78;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            left: 3px;
+            text-shadow: -2px 0 #C8FF00;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(29px, 9999px, 86px, 0); }
+            20% { clip: rect(10px, 9999px, 20px, 0); }
+            40% { clip: rect(79px, 9999px, 100px, 0); }
+            60% { clip: rect(38px, 9999px, 15px, 0); }
+            80% { clip: rect(56px, 9999px, 72px, 0); }
+            100% { clip: rect(98px, 9999px, 5px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(15px, 9999px, 92px, 0); }
+            20% { clip: rect(8px, 9999px, 45px, 0); }
+            40% { clip: rect(75px, 9999px, 88px, 0); }
+            60% { clip: rect(22px, 9999px, 12px, 0); }
+            80% { clip: rect(64px, 9999px, 50px, 0); }
+            100% { clip: rect(4px, 9999px, 99px, 0); }
+        }
+        
+        .btn-primary {
+            @apply font-label-xl text-label-xl bg-[#C8FF00] text-[#0A0A0A] border-2 border-[#C8FF00] rounded-none px-8 py-3 uppercase transition-all duration-150;
+        }
+        .btn-primary:hover {
+            @apply bg-[#0A0A0A] text-[#C8FF00];
+            animation: jitter 0.2s infinite;
+        }
+        .btn-ghost {
+            @apply font-label-xl text-label-xl bg-transparent text-[#e5e2e1] border-2 border-[#888888] rounded-none px-8 py-3 uppercase transition-all duration-150;
+        }
+        .btn-ghost:hover {
+            @apply border-[#C8FF00] text-[#C8FF00];
+        }
+
+        @keyframes jitter {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(1px, -1px); }
+            50% { transform: translate(-1px, 1px); }
+            75% { transform: translate(-1px, -1px); }
+            100% { transform: translate(1px, 1px); }
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .grain-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        
+        /* Custom scrollbar for trending row */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden pt-16">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-background border-b border-primary-fixed-dim dark:border-primary-fixed-dim">
+<div class="flex items-center gap-gutter">
+<a class="font-display-hero text-headline-lg uppercase text-primary dark:text-primary relative after:content-['FRKWEAR'] after:absolute after:-left-[2px] after:top-0 after:text-secondary-container after:opacity-50 before:content-['FRKWEAR'] before:absolute before:left-[2px] before:top-0 before:text-primary-fixed-dim before:opacity-50" href="#">FRKWEAR</a>
+</div>
+<div class="hidden md:flex gap-stack-md items-center">
+<a class="text-primary font-bold border-b-2 border-primary-fixed-dim pb-1 font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim uppercase" href="#">DROPS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75" href="#">VAULT</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75" href="#">COLLECTIONS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:text-primary-fixed-dim hover:skew-x-2 transition-transform duration-75" href="#">COMMUNITY</a>
+</div>
+<div class="flex items-center gap-stack-sm text-primary-fixed-dim dark:text-primary-fixed-dim">
+<button class="p-2 hover:skew-x-2 transition-transform duration-75 hover:brightness-125">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 hover:skew-x-2 transition-transform duration-75 hover:brightness-125">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+<!-- HERO SECTION -->
+<header class="relative w-full h-[calc(100vh-64px)] bg-[#0A0A0A] flex flex-col justify-center items-center text-center overflow-hidden border-b border-[#C8FF00]">
+<div class="grain-overlay"></div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop">
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero uppercase text-primary glitch-text" data-text="WEAR THE STATIC.">WEAR THE STATIC.</h1>
+<p class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface-variant mt-stack-md max-w-2xl mx-auto uppercase">Limited drops. No reruns. Built different.</p>
+<div class="flex flex-col sm:flex-row gap-gutter justify-center mt-stack-lg">
+<button class="btn-primary">SHOP NOW</button>
+<button class="btn-ghost">EXPLORE DROPS</button>
+</div>
+</div>
+<!-- Abstract background elements -->
+<div class="absolute top-1/4 left-[-10%] w-96 h-96 bg-[#C8FF00] rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
+<div class="absolute bottom-1/4 right-[-10%] w-96 h-96 bg-[#FF2D78] rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
+</header>
+<!-- TICKER MARQUEE -->
+<div class="w-full bg-[#C8FF00] py-3 border-y border-[#0A0A0A] marquee-container relative z-20">
+<div class="marquee-content font-label-xl text-label-xl text-[#0A0A0A]">
+            FREE SHIPPING ABOVE ₹999 ★ NEW DROP: EVERY FRIDAY ★ UNISEX FITS ★ NO GATEKEEPING ★ FREE SHIPPING ABOVE ₹999 ★ NEW DROP: EVERY FRIDAY ★ UNISEX FITS ★ NO GATEKEEPING ★
+        </div>
+</div>
+<!-- MAIN CONTENT -->
+<main class="w-full pb-stack-lg">
+<!-- CATEGORY GRID -->
+<section class="py-stack-lg px-margin-mobile md:px-margin-desktop">
+<h2 class="font-display-hero text-display-hero-mobile uppercase text-primary mb-stack-lg relative inline-block glitch-text" data-text="PICK YOUR FIT">
+                PICK YOUR FIT
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter h-auto md:h-[600px]">
+<div class="relative bg-surface-container-high border border-[#C8FF00]/30 group overflow-hidden md:col-span-2 h-[300px] md:h-full cursor-pointer">
+<img alt="Model wearing FRKWEAR dark glitch-core hoodie in urban setting" class="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500" data-alt="A gritty urban fashion shot featuring a model wearing a heavy, oversized black hoodie with neon green stitching details. The model stands in a dimly lit, brutalist concrete stairwell. The lighting is harsh and directional, emphasizing the texture of the fabric and creating deep, dramatic shadows. The overall aesthetic is dark, raw, and aligns with a cyberpunk or glitch-core Y2K chaos style. The image has a subtle chromatic aberration effect applied to the edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt5dL8JlkO0snoozhGHSsA00p25FErdz2Bq3q0IMfUXOsyX3YPc_44sLSw7ox6rcySYtJOmWUQHl1nGI2N7UsandJ9bG2r64iGfIFRHawDM1Pn6fzF9yC7cgYLfq_45-_2p8ZMw_4OpptSp8o4YthX8ZxnrvHRCJK8EbEX_MD5vsohtDoBVyTHd0DZq6mgzbH5J5DuStTPT8GWuo7YJGGCOcwj6mrfDbbin7bfx15Q9NfIXfVox6n39Nh6fdGyAwVwj-nLq7lG5cM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-80"></div>
+<div class="absolute bottom-margin-mobile left-margin-mobile">
+<h3 class="font-headline-lg text-headline-lg text-primary uppercase">Hoodies</h3>
+<div class="mt-2 inline-block px-3 py-1 border border-[#FF2D78] bg-[#0A0A0A] font-body-md font-bold text-xs">EXPLORE -&gt;</div>
+</div>
+</div>
+<div class="flex flex-col gap-gutter h-[600px] md:h-full">
+<div class="relative bg-surface-container-high border border-[#C8FF00]/30 group overflow-hidden h-1/2 cursor-pointer">
+<img alt="Model wearing FRKWEAR acid wash t-shirt" class="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500" data-alt="A close-up fashion portrait of a model wearing a distressed, acid-wash oversized t-shirt with a faded, glitchy graphic print. The background is a solid void black. The lighting features a strong pink rim light on one side and a lime green rim light on the other, creating a high-contrast, aggressive Y2K visual style. The model's pose is defiant and angular." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvnH_ovmCx0gDLKJru--dMgRquUAoUqwiznzYvP-hkpK2mQCOgF2kluLyMkjaBgYnMFAs486oGXJ6qahFDs9seE62Mslkg0yK0HVBdi4wnav1KqHxtruVO3UMgUHsqCbgXMpQRSBclNTDj7ZakIb1XWMUg9DSksTkiMrt0tsWu3JYgKA-5Q6wJi98KL6jXh-DL94XNLqcGZxgcqXHjthkwsE3LMJBBBLzRlYOf6WuhIo2PUY4TXDd3ucaWLQk65dfhSChxb33uARQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-80"></div>
+<div class="absolute bottom-margin-mobile left-margin-mobile">
+<h3 class="font-headline-lg text-headline-md text-primary uppercase">T-Shirts</h3>
+</div>
+</div>
+<div class="relative bg-surface-container-high border border-[#C8FF00]/30 group overflow-hidden h-1/2 cursor-pointer">
+<img alt="Model wearing FRKWEAR full matching set" class="absolute inset-0 w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-500" data-alt="A full-body fashion shot of a model wearing a complete matching two-piece set consisting of baggy cargo pants and a cropped technical jacket in a stark, off-white color against a pitch-black background. The garments feature sharp, brutalist geometric paneling and excessive hardware. The lighting is stark and flat, simulating an interrogation room or a clinical digital void. The image conveys a sense of cold, functional fashion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7t3-EGmFcFRKU3JsztsWG7_EaLnRCASKoY9kJOAtfjlFVOwQq2RVzjOS_fttS_11XJ70zhnuz0WUjx296xV0kRuguifTlGoLRzuzASCF64oFjP23eLWGvo4P_5pDOQ7kolUBaXNTlPfN924lRGtxuUTmqgHMpALAReztg2F-M_32RCTlADeIapqmd3Boil6lJcXrNbH8fXKUbrURW0TTVO_WJn-HPCnMbYwliSvlQBxdslC4uD5zwwof_1x8yOi6AsKyPj-KOWkc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent opacity-80"></div>
+<div class="absolute bottom-margin-mobile left-margin-mobile">
+<h3 class="font-headline-lg text-headline-md text-primary uppercase">Full Sets</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full py-stack-lg px-margin-mobile md:px-margin-desktop bg-background border-t border-primary-fixed-dim dark:border-primary-fixed-dim relative z-10">
+<div>
+<div class="font-display-hero text-headline-lg text-primary dark:text-primary uppercase tracking-tighter mb-4">FRKWEAR</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant">©2024 FRKWEAR VOID-SYSTEMS ALL RIGHTS RESERVED</p>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background w-fit" href="#">TERMS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background w-fit" href="#">PRIVACY</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background w-fit" href="#">SHIPPING</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background w-fit" href="#">RETURNS</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background w-fit" href="#">CONTACT</a>
+</div>
+</footer>
+</body></html>

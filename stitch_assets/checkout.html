@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRKWEAR | Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,700&amp;family=Space+Grotesk:wght@400;700&amp;family=Syne:wght@800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e00363",
+                        "on-primary-fixed": "#161f00",
+                        "secondary-fixed": "#ffd9df",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-tertiary-container": "#782bfc",
+                        "on-tertiary-fixed": "#24005b",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#4f6600",
+                        "primary-fixed-dim": "#a8d700",
+                        "outline": "#8e9479",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3939",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4caac",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#fff6f6",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#546d00",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#eaddff",
+                        "surface-container": "#201f1f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "surface": "#131313",
+                        "surface-tint": "#a8d700",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb1c0",
+                        "on-tertiary-fixed-variant": "#5700c8",
+                        "primary-container": "#c0f500",
+                        "surface-container-highest": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#434933",
+                        "on-tertiary": "#3d0090",
+                        "primary": "#ffffff",
+                        "tertiary-container": "#eaddff",
+                        "on-secondary-fixed": "#3f0017",
+                        "on-primary": "#273500",
+                        "secondary": "#ffb1c0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#90003d",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#c0f500",
+                        "on-secondary": "#660029"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "display-hero-mobile": ["Syne"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-hero": ["Syne"],
+                        "body-lg": ["DM Sans"],
+                        "label-xl": ["Bebas Neue"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-md": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-hero-mobile": ["48px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["80px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-xl": ["28px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["18px", { "lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glitch-text {
+            position: relative;
+        }
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #e00363;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #c0f500;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(13px, 9999px, 86px, 0); }
+            5% { clip: rect(61px, 9999px, 92px, 0); }
+            10% { clip: rect(19px, 9999px, 66px, 0); }
+            15% { clip: rect(98px, 9999px, 4px, 0); }
+            20% { clip: rect(44px, 9999px, 63px, 0); }
+            25% { clip: rect(76px, 9999px, 16px, 0); }
+            30% { clip: rect(81px, 9999px, 6px, 0); }
+            35% { clip: rect(26px, 9999px, 92px, 0); }
+            40% { clip: rect(100px, 9999px, 57px, 0); }
+            45% { clip: rect(78px, 9999px, 35px, 0); }
+            50% { clip: rect(9px, 9999px, 13px, 0); }
+            55% { clip: rect(28px, 9999px, 2px, 0); }
+            60% { clip: rect(50px, 9999px, 5px, 0); }
+            65% { clip: rect(35px, 9999px, 84px, 0); }
+            70% { clip: rect(8px, 9999px, 100px, 0); }
+            75% { clip: rect(56px, 9999px, 95px, 0); }
+            80% { clip: rect(23px, 9999px, 49px, 0); }
+            85% { clip: rect(87px, 9999px, 28px, 0); }
+            90% { clip: rect(6px, 9999px, 73px, 0); }
+            95% { clip: rect(92px, 9999px, 48px, 0); }
+            100% { clip: rect(11px, 9999px, 1px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            5% { clip: rect(52px, 9999px, 74px, 0); }
+            10% { clip: rect(79px, 9999px, 85px, 0); }
+            15% { clip: rect(75px, 9999px, 5px, 0); }
+            20% { clip: rect(67px, 9999px, 61px, 0); }
+            25% { clip: rect(14px, 9999px, 79px, 0); }
+            30% { clip: rect(1px, 9999px, 66px, 0); }
+            35% { clip: rect(86px, 9999px, 30px, 0); }
+            40% { clip: rect(23px, 9999px, 98px, 0); }
+            45% { clip: rect(85px, 9999px, 72px, 0); }
+            50% { clip: rect(71px, 9999px, 75px, 0); }
+            55% { clip: rect(2px, 9999px, 48px, 0); }
+            60% { clip: rect(30px, 9999px, 16px, 0); }
+            65% { clip: rect(59px, 9999px, 50px, 0); }
+            70% { clip: rect(41px, 9999px, 62px, 0); }
+            75% { clip: rect(2px, 9999px, 82px, 0); }
+            80% { clip: rect(47px, 9999px, 73px, 0); }
+            85% { clip: rect(3px, 9999px, 27px, 0); }
+            90% { clip: rect(26px, 9999px, 55px, 0); }
+            95% { clip: rect(42px, 9999px, 97px, 0); }
+            100% { clip: rect(38px, 9999px, 49px, 0); }
+        }
+        
+        .input-field {
+            @apply w-full bg-[#0A0A0A] border border-[#888888] rounded-none px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-[#FF2D78] focus:ring-0 transition-colors duration-200;
+        }
+        .input-field:focus {
+            box-shadow: 2px 2px 0px 0px #FF2D78;
+        }
+        .input-label {
+            @apply block font-label-md text-label-md text-[#F0F0F0] mb-2 uppercase;
+        }
+        .glitch-btn {
+            @apply bg-primary-container text-[#0A0A0A] font-label-xl text-label-xl uppercase px-8 py-4 border-2 border-primary-container relative overflow-hidden transition-all duration-200;
+        }
+        .glitch-btn:hover {
+            @apply bg-[#0A0A0A] text-primary-container;
+            animation: btn-jitter 0.2s infinite;
+        }
+        @keyframes btn-jitter {
+            0% { transform: translate(0, 0); }
+            20% { transform: translate(-2px, 1px); }
+            40% { transform: translate(1px, -1px); }
+            60% { transform: translate(-1px, 2px); }
+            80% { transform: translate(2px, -1px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-fixed antialiased">
+<!-- CHECKOUT HEADER -->
+<header class="w-full border-b border-surface-variant bg-background/90 backdrop-blur-md sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop h-20 flex items-center justify-between">
+<a class="font-display-hero text-headline-lg uppercase text-primary tracking-tighter glitch-text" data-text="FRKWEAR" href="#">FRKWEAR</a>
+<div class="flex items-center gap-2 text-primary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">SECURE CHECKOUT</span>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg min-h-[calc(100vh-80px)]">
+<!-- STEPPER -->
+<div class="mb-stack-lg flex items-center justify-center gap-4 text-sm font-label-md text-label-md">
+<div class="flex items-center gap-2 text-primary-fixed-dim">
+<span class="w-6 h-6 rounded-none border border-primary-fixed-dim flex items-center justify-center bg-primary-container text-[#0A0A0A]">1</span>
+<span>Information</span>
+</div>
+<div class="w-12 h-px bg-surface-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-6 h-6 rounded-none border border-surface-variant flex items-center justify-center">2</span>
+<span>Shipping</span>
+</div>
+<div class="w-12 h-px bg-surface-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="w-6 h-6 rounded-none border border-surface-variant flex items-center justify-center">3</span>
+<span>Payment</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- LEFT: FORM SECTIONS -->
+<div class="lg:col-span-7 space-y-stack-md">
+<!-- CONTACT -->
+<section class="bg-surface-container-low border border-surface-variant p-stack-md relative">
+<div class="absolute -top-3 -left-3 w-6 h-6 border-t-2 border-l-2 border-primary-fixed-dim"></div>
+<div class="absolute -bottom-3 -right-3 w-6 h-6 border-b-2 border-r-2 border-primary-fixed-dim"></div>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm uppercase">Contact</h2>
+<div class="space-y-4">
+<div>
+<label class="input-label" for="email">Email Address</label>
+<input class="input-field" id="email" placeholder="VOID@FRKWEAR.COM" type="email"/>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<input class="bg-[#0A0A0A] border-[#888888] text-primary-fixed-dim focus:ring-[#FF2D78] rounded-none" id="newsletter" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant" for="newsletter">Send me drops and chaos updates.</label>
+</div>
+</div>
+</section>
+<!-- SHIPPING -->
+<section class="bg-surface-container-low border border-surface-variant p-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm uppercase">Shipping Address</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="md:col-span-2">
+<label class="input-label" for="country">Country/Region</label>
+<select class="input-field appearance-none" id="country">
+<option>United States</option>
+<option>Cyberia</option>
+<option>Neo Tokyo</option>
+</select>
+</div>
+<div>
+<label class="input-label" for="fname">First Name</label>
+<input class="input-field" id="fname" type="text"/>
+</div>
+<div>
+<label class="input-label" for="lname">Last Name</label>
+<input class="input-field" id="lname" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="input-label" for="address">Address</label>
+<input class="input-field" id="address" placeholder="123 Glitch Blvd" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="input-label" for="apartment">Apartment, suite, etc. (optional)</label>
+<input class="input-field" id="apartment" type="text"/>
+</div>
+<div>
+<label class="input-label" for="city">City</label>
+<input class="input-field" id="city" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="input-label" for="state">State</label>
+<input class="input-field" id="state" type="text"/>
+</div>
+<div>
+<label class="input-label" for="zip">ZIP code</label>
+<input class="input-field" id="zip" type="text"/>
+</div>
+</div>
+</div>
+</section>
+<div class="flex justify-end pt-unit">
+<button class="glitch-btn w-full md:w-auto">CONTINUE TO SHIPPING</button>
+</div>
+</div>
+<!-- RIGHT: SUMMARY -->
+<div class="lg:col-span-5">
+<div class="sticky top-28 bg-[#141414] border border-surface-variant p-stack-md">
+<!-- Subtle scanline overlay for product card aesthetic -->
+<div class="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px]"></div>
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-md uppercase border-b border-surface-variant pb-unit">Order Summary</h2>
+<!-- Items -->
+<div class="space-y-4 mb-stack-md">
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 bg-surface-variant border border-primary-fixed-dim/30 relative">
+<img alt="Void Hoodie" class="w-full h-full object-cover grayscale contrast-150 mix-blend-luminosity" data-alt="A gritty, high-contrast, dark mode product shot of a futuristic streetwear hoodie. The hoodie is pitch black with subtle glitch-art graphic elements in acid chartreuse and neon pink. The lighting is harsh and industrial, creating sharp shadows. The background is a stark, brutalist concrete texture, emphasizing the raw, Gen Alpha Y2K chaos aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfs7aiojkckLWccm0PMzbBiI_Gi0dLKDGwktQinkbeYsJHDjCnTFoL4cvbgPuUD8z7WM_n9o_-GEquk4-GxdNyOg7CucKoIebSllZ05AIcTn1j4UMhZDbppRa5KC6iqwdPfQCNAip9H1m5r-BcJ-KtbIR7616mPuOUYYeNi3XaFl2e0LgSmcpqGh8V1pgzMvBqDCVZLgxXP2cVlcjGJz4gEbMVZzORvdqfVGhPlQ6rwZLv8eW9nQk5oBKGzNqjJSkRdI03EbEpM2s"/>
+<div class="absolute -top-2 -right-2 w-5 h-5 bg-primary-container text-[#0A0A0A] flex items-center justify-center font-label-md text-[10px] rounded-full border border-[#0A0A0A]">1</div>
+</div>
+<div class="flex-1">
+<h3 class="font-body-lg text-body-lg text-primary uppercase">VOID_HOODIE_v2</h3>
+<p class="text-on-surface-variant font-body-md text-sm">SIZE: L</p>
+</div>
+<div class="font-body-lg text-body-lg text-primary">$120.00</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-20 h-20 bg-surface-variant border border-primary-fixed-dim/30 relative">
+<img alt="Glitch Sneakers" class="w-full h-full object-cover grayscale contrast-150 mix-blend-luminosity" data-alt="A stark, high-contrast product image of chunky, brutalist sneakers in a dark void setting. The sneakers feature sharp geometric shapes and are illuminated by a harsh, unnatural pink and lime green rim light, mimicking chromatic aberration. The overall mood is aggressive, technological, and perfectly aligns with a chaotic, glitch-core streetwear brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUjgrIyqwJ4Tyyv0WtTYIyvYVj-KkIZr5e724kB2Zx7S7Ojj6uo0tBlOPuNLvuseZJdEabPYkysGiHErmeOIIX6N19HHQ1O_N_OEkbhESexpiOCr3HqMcNvqFAwY_raG5JaoKFjjeuWAOUQpKb5dHeZdTWY-Th-HG26O226r-kOONDaR8cxUihDXvETv1xZ6KwMy87iFdubOtqaxhEMMNyNS9Gi5F-lhFx2vbv1brkYt3jhnZak3TVaiSEPFMbP4PTGS1ndoDTGUs"/>
+<div class="absolute -top-2 -right-2 w-5 h-5 bg-primary-container text-[#0A0A0A] flex items-center justify-center font-label-md text-[10px] rounded-full border border-[#0A0A0A]">1</div>
+</div>
+<div class="flex-1">
+<h3 class="font-body-lg text-body-lg text-primary uppercase">ERROR_KICKS</h3>
+<p class="text-on-surface-variant font-body-md text-sm">SIZE: 10.5</p>
+</div>
+<div class="font-body-lg text-body-lg text-primary">$180.00</div>
+</div>
+</div>
+<!-- Discount -->
+<div class="flex gap-2 mb-stack-md border-y border-surface-variant py-4">
+<input class="input-field flex-1 text-sm py-2" placeholder="DISCOUNT CODE" type="text"/>
+<button class="bg-[#2a2a2a] text-primary px-4 font-label-md text-label-md uppercase border border-surface-variant hover:border-primary-fixed-dim transition-colors">APPLY</button>
+</div>
+<!-- Totals -->
+<div class="space-y-2 font-body-md text-body-md text-on-surface-variant mb-stack-md">
+<div class="flex justify-between">
+<span>Subtotal</span>
+<span class="text-primary">$300.00</span>
+</div>
+<div class="flex justify-between">
+<span>Shipping</span>
+<span>Calculated next step</span>
+</div>
+<div class="flex justify-between">
+<span>Taxes</span>
+<span>$24.00</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-surface-variant pt-4 mb-stack-lg">
+<span class="font-headline-md text-headline-md text-primary uppercase">Total</span>
+<div class="text-right">
+<span class="text-on-surface-variant text-sm mr-2">USD</span>
+<span class="font-headline-lg text-headline-lg text-primary-fixed-dim">$324.00</span>
+</div>
+</div>
+<!-- Checkout Button -->
+<button class="glitch-btn w-full">PLACE ORDER</button>
+<p class="text-center mt-4 text-xs text-on-surface-variant font-body-md uppercase tracking-widest flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">encrypted</span> Secure Encrypted Transaction
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="w-full border-t border-primary-fixed-dim bg-background py-stack-lg px-margin-mobile md:px-margin-desktop mt-stack-lg">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-display-hero text-headline-lg text-primary uppercase tracking-tighter">FRKWEAR</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150" href="#">TERMS</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150" href="#">PRIVACY</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150" href="#">CONTACT</a>
+</div>
+</div>
+</footer>
+</body></html>

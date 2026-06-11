@@ -1,0 +1,80 @@
+export const products = [
+  {
+    id: "frk-001",
+    name: "CYBERPUNK GLITCH HOODIE",
+    price: 1899,
+    category: "Hoodies",
+    badge: "LIMITED",
+    rating: 4.8,
+    reviews: 142,
+    colors: ["#0A0A0A", "#7B2FFF", "#FF2D78"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    imageUrl: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?auto=format&fit=crop&w=500&q=80",
+    description: "Ultra-heavyweight 100% cotton hoodie. Features double-layered digital screen print with static glitch overlays. Raw hem, drop shoulder silhouette. Built for Y2K chaos energy."
+  },
+  {
+    id: "frk-002",
+    name: "STATIC VOID OVERSIZED TEE",
+    price: 999,
+    category: "T-Shirts",
+    badge: "NEW",
+    rating: 4.9,
+    reviews: 87,
+    colors: ["#0A0A0A", "#C8FF00", "#F0F0F0"],
+    sizes: ["S", "M", "L", "XL"],
+    imageUrl: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80",
+    description: "Heavy 240 GSM pre-shrunk cotton tee. Features neon acid lime typography print on chest, offset pink chromatic glitch logo on spine. Generous street fit."
+  },
+  {
+    id: "frk-003",
+    name: "CHAOS TRACKSET FULL FIT",
+    price: 3499,
+    category: "Full Sets",
+    badge: "LIMITED",
+    rating: 4.7,
+    reviews: 34,
+    colors: ["#0A0A0A", "#141414"],
+    sizes: ["M", "L", "XL"],
+    imageUrl: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80",
+    description: "Matching brutalist cargo tracks + glitch overlay jacket. Zero border styling, contrast zipper, pixel pink panels, and neon stitch tags. Engineered for comfort, styled for noise."
+  },
+  {
+    id: "frk-004",
+    name: "PIXEL ABERRATION SWEATER",
+    price: 2199,
+    category: "Hoodies",
+    badge: "NEW",
+    rating: 4.6,
+    reviews: 51,
+    colors: ["#7B2FFF", "#FF2D78"],
+    sizes: ["S", "M", "L", "XL"],
+    imageUrl: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500&q=80",
+    description: "Knit heavy rib sweatshirt with custom RGB color split woven texture. Acid chartreuse cuff accents and Bebas Neue graphic overlays."
+  },
+  {
+    id: "frk-005",
+    name: "DECAY GRAPHIC TEE",
+    price: 899,
+    category: "T-Shirts",
+    badge: "NEW",
+    rating: 4.5,
+    reviews: 112,
+    colors: ["#F0F0F0", "#0A0A0A"],
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    imageUrl: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=500&q=80",
+    description: "Washed distress tee showcasing the FRKWEAR static manifesto logo. Lightweight but sturdy, perfect fit for layering under tactical jackets."
+  },
+  {
+    id: "frk-006",
+    name: "TACTICAL VOID HOODIE",
+    price: 2499,
+    category: "Hoodies",
+    badge: "LIMITED",
+    rating: 5.0,
+    reviews: 29,
+    colors: ["#0A0A0A"],
+    sizes: ["M", "L", "XL", "XXL"],
+    imageUrl: "https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=500&q=80",
+    description: "High-grade technical fleece hoodie. Features modular Velcro utility patches, signature lime glow trim, and high density Y2K screen prints on sleeves."
+  }
+]

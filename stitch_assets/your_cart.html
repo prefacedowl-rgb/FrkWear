@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRKWEAR | Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Grotesk:wght@300..700&amp;family=Syne:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#e00363",
+                      "on-primary-fixed": "#161f00",
+                      "secondary-fixed": "#ffd9df",
+                      "tertiary-fixed-dim": "#d1bcff",
+                      "on-tertiary-container": "#782bfc",
+                      "on-tertiary-fixed": "#24005b",
+                      "background": "#131313",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-primary": "#4f6600",
+                      "primary-fixed-dim": "#a8d700",
+                      "outline": "#8e9479",
+                      "on-error": "#690005",
+                      "surface-bright": "#3a3939",
+                      "inverse-on-surface": "#313030",
+                      "on-surface": "#e5e2e1",
+                      "on-surface-variant": "#c4caac",
+                      "surface-dim": "#131313",
+                      "on-secondary-container": "#fff6f6",
+                      "tertiary": "#ffffff",
+                      "on-primary-container": "#546d00",
+                      "surface-variant": "#353534",
+                      "tertiary-fixed": "#eaddff",
+                      "surface-container": "#201f1f",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary-fixed-variant": "#3b4d00",
+                      "surface": "#131313",
+                      "surface-tint": "#a8d700",
+                      "error-container": "#93000a",
+                      "secondary-fixed-dim": "#ffb1c0",
+                      "on-tertiary-fixed-variant": "#5700c8",
+                      "primary-container": "#c0f500",
+                      "surface-container-highest": "#353534",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "outline-variant": "#434933",
+                      "on-tertiary": "#3d0090",
+                      "primary": "#ffffff",
+                      "tertiary-container": "#eaddff",
+                      "on-secondary-fixed": "#3f0017",
+                      "on-primary": "#273500",
+                      "secondary": "#ffb1c0",
+                      "surface-container-low": "#1c1b1b",
+                      "on-secondary-fixed-variant": "#90003d",
+                      "on-background": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "primary-fixed": "#c0f500",
+                      "on-secondary": "#660029"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "24px",
+                      "stack-lg": "48px",
+                      "margin-mobile": "20px",
+                      "unit": "4px",
+                      "gutter": "16px",
+                      "margin-desktop": "64px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "DM Sans"
+                      ],
+                      "display-hero-mobile": [
+                              "Syne"
+                      ],
+                      "headline-lg": [
+                              "Space Grotesk"
+                      ],
+                      "display-hero": [
+                              "Syne"
+                      ],
+                      "body-lg": [
+                              "DM Sans"
+                      ],
+                      "label-xl": [
+                              "Bebas Neue"
+                      ],
+                      "headline-md": [
+                              "Space Grotesk"
+                      ],
+                      "label-md": [
+                              "Bebas Neue"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "48px",
+                              {
+                                      "lineHeight": "48px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "80px",
+                              {
+                                      "lineHeight": "80px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-xl": [
+                              "28px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "18px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glitch-text {
+            position: relative;
+        }
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+        .glitch-text::before {
+            left: -2px;
+            color: #FF2D78; /* Pink glitch */
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            left: 2px;
+            color: #C8FF00; /* Lime glitch */
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 1px); }
+            20% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -1px); }
+            40% { clip-path: inset(40% 0 40% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(20% 0 60% 0); transform: translate(2px, -2px); }
+            80% { clip-path: inset(60% 0 20% 0); transform: translate(-1px, 1px); }
+            100% { clip-path: inset(5% 0 90% 0); transform: translate(1px, -1px); }
+        }
+
+        .btn-glitch:hover {
+            animation: jitter 0.2s infinite;
+        }
+        @keyframes jitter {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-1px, 1px); }
+            50% { transform: translate(1px, -1px); }
+            75% { transform: translate(-1px, -1px); }
+            100% { transform: translate(1px, 1px); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden pt-16">
+<!-- TopNavBar Shared Component -->
+<nav aria-label="Top navigation" class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-background border-b border-primary-fixed-dim dark:border-primary-fixed-dim">
+<div class="flex items-center gap-stack-md">
+<a class="font-display-hero text-headline-lg uppercase text-primary dark:text-primary relative after:content-['FRKWEAR'] after:absolute after:-left-[2px] after:top-0 after:text-secondary-container after:opacity-50 before:content-['FRKWEAR'] before:absolute before:left-[2px] before:top-0 before:text-primary-fixed-dim before:opacity-50" href="/">FRKWEAR</a>
+</div>
+<div class="hidden md:flex gap-gutter items-center h-full">
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim flex items-center h-full px-2" href="#">DROPS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim flex items-center h-full px-2" href="#">VAULT</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim flex items-center h-full px-2" href="#">COLLECTIONS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant uppercase font-body-md text-body-md hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim flex items-center h-full px-2" href="#">COMMUNITY</a>
+</div>
+<div class="flex items-center gap-gutter text-primary-fixed-dim dark:text-primary-fixed-dim">
+<button aria-label="shopping_cart" class="hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button aria-label="person" class="hover:skew-x-2 transition-transform duration-75 hover:text-primary-fixed-dim">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<!-- Header -->
+<header class="mb-stack-lg">
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero uppercase glitch-text" data-text="YOUR CART (3)">YOUR CART (3)</h1>
+</header>
+<!-- Upsell Banner -->
+<div class="w-full bg-primary-container text-[#0A0A0A] py-stack-sm px-gutter mb-stack-lg border-2 border-primary-container flex items-center justify-center">
+<p class="font-label-xl text-label-xl uppercase m-0 text-center">YOU'RE ₹199 AWAY FROM FREE SHIPPING 🔥</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-stack-lg items-start">
+<!-- Left: Cart Items (60%) -->
+<div class="w-full lg:w-[60%] flex flex-col gap-stack-md">
+<!-- Item 1 -->
+<div class="flex items-center gap-gutter py-stack-md border-b border-primary-fixed-dim relative group">
+<div class="w-[80px] h-[80px] bg-surface-container-high border border-primary-fixed-dim border-opacity-30 flex-shrink-0 relative overflow-hidden">
+<img alt="Cyber Hoodie Thumbnail" class="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A gritty, high-contrast close-up of a futuristic black hoodie with bright neon green geometric graphics. The lighting is harsh and directional, emphasizing the texture of the heavy cotton fabric. Shot in a stark, industrial setting with deep black shadows, fitting a glitch-core Y2K fashion aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmdoZ32FjAf8zJIGS6V-C7BPTC9hhD2Qg4TOAneCk9_HQMjtHx8GfZOjqp8cPaSHd58aZKaffd7qlUma1y6-bK8-150elIYpNcPIDFXdgrh_HcK8oI5cdFdOZ9D2rF1RZb2tCEosbSegK-4r8Xf2SiNKZ-sPaspAeXil53M1SbnwF0GqbP78MI-rblt0kBMfcFg20PBqedSCP5YyBZYSJpwXGD-V3E7wnaPmPees5R_tfIXON9DZD5kXMOwmuLqNMjEXv5q1YwZfw"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<h3 class="font-headline-lg text-headline-md uppercase text-primary">VOID-WALKER HOODIE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant uppercase mt-1">SIZE: L | COLOR: ACID</p>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="flex items-center bg-[#0A0A0A] border border-outline px-2 py-1">
+<button class="text-on-surface hover:text-primary-container"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-body-md text-body-md px-3">1</span>
+<button class="text-on-surface hover:text-primary-container"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<span class="font-label-xl text-label-xl text-primary-container tracking-wider">₹4,999</span>
+<button aria-label="Remove item" class="text-outline hover:text-[#FF2D78] transition-colors ml-2">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-gutter py-stack-md border-b border-primary-fixed-dim relative group">
+<div class="w-[80px] h-[80px] bg-surface-container-high border border-primary-fixed-dim border-opacity-30 flex-shrink-0 relative overflow-hidden">
+<img alt="Tech Cargo Pants Thumbnail" class="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Detail shot of tactical cargo pants in deep charcoal grey. Multiple utility pockets with matte black hardware and subtle neon pink contrasting stitches. The image has a raw, flash-photography style look with hard shadows against a void black background. Brutalist fashion aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb0yPvi0vY7-ZUXKJNW8fJugxt9bHMQrlXyVIkQg7pcm6QN1YNWqlNlUBvGM_6eUA4HTt03_wI7YRqEwrI-9d-ut63zF2QCesvfB70AN_F7kfpNj5iW3WFpLC98t0uQgn83aFF2_0oOod3fJVRQquG38wzxv-ZmDwyDLeC_pupZHlSGhp264YCI5eVd2wp519YTvcg0mcZ_KGd1EqdYXJFNTboRJy1Oo5B-uZQgUbw2kOQYNAosxmM3QJxJ-cKspU4ZiG_7gikDH0"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<h3 class="font-headline-lg text-headline-md uppercase text-primary">GLITCH CARGO V2</h3>
+<p class="font-body-md text-body-md text-on-surface-variant uppercase mt-1">SIZE: 32 | COLOR: ONYX</p>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="flex items-center bg-[#0A0A0A] border border-outline px-2 py-1">
+<button class="text-on-surface hover:text-primary-container"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-body-md text-body-md px-3">2</span>
+<button class="text-on-surface hover:text-primary-container"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<span class="font-label-xl text-label-xl text-primary-container tracking-wider">₹7,500</span>
+<button aria-label="Remove item" class="text-outline hover:text-[#FF2D78] transition-colors ml-2">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-gutter py-stack-md border-b border-primary-fixed-dim relative group">
+<div class="w-[80px] h-[80px] bg-surface-container-high border border-primary-fixed-dim border-opacity-30 flex-shrink-0 relative overflow-hidden">
+<img alt="Cyber Sneakers Thumbnail" class="w-full h-full object-cover mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity" data-alt="Close up of chunky, futuristic sneakers with an aggressive sole design. The shoe is primarily white and grey with sharp, angular accents in chartreuse green. Photographed from a low angle on a reflective black surface in a stark studio environment. High contrast, technical footwear photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWU4HMRnDZOw9XxdpTw7EuK3RcVTUujJE2s4xrAhqGgGGnW0krMukz636Koi-8JHENeC_9yp7__z_pAAbH-5I7pWu4HVdmZBqlfSlYDs3efl70PijKmCYV7Q5S-dDePWsWkzv1AbQ0uX968xRx_2LA-bRy9C-GuuG3-V_8JmcyAhWLMNAP2x1kWAcfjBf8vt7lkCZ4LoNoieRNUA9NH_hxdlU9j5jMdD8VXHf0qnEEZWgZSGs8PgLNUEBSQbbUWbFd_3bn813m2I4"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<h3 class="font-headline-lg text-headline-md uppercase text-primary">PROTOCOL KICKS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant uppercase mt-1">SIZE: 10 | COLOR: CHROME</p>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="flex items-center bg-[#0A0A0A] border border-outline px-2 py-1">
+<button class="text-on-surface hover:text-primary-container"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-body-md text-body-md px-3">1</span>
+<button class="text-on-surface hover:text-primary-container"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+<span class="font-label-xl text-label-xl text-primary-container tracking-wider">₹12,000</span>
+<button aria-label="Remove item" class="text-outline hover:text-[#FF2D78] transition-colors ml-2">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right: Sticky Order Summary (40%) -->
+<div class="w-full lg:w-[40%] sticky top-[100px]">
+<div class="bg-[#141414] border border-primary-container p-stack-md relative shadow-[4px_4px_0px_0px_rgba(200,255,0,0.2)]">
+<h2 class="font-headline-lg text-headline-md uppercase text-primary mb-stack-md">ORDER SUMMARY</h2>
+<div class="flex flex-col gap-unit mb-stack-md font-body-md text-body-md">
+<div class="flex justify-between">
+<span class="text-on-surface-variant uppercase">SUBTOTAL</span>
+<span class="text-primary">₹24,499</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant uppercase">SHIPPING</span>
+<span class="text-primary">₹199</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant uppercase">TAXES</span>
+<span class="text-primary">CALCULATED AT CHECKOUT</span>
+</div>
+</div>
+<!-- Coupon Input -->
+<div class="flex gap-2 mb-stack-md">
+<div class="relative flex-grow">
+<input class="w-full bg-[#0A0A0A] border border-outline focus:border-[#FF2D78] focus:ring-0 focus:shadow-[2px_2px_0px_0px_#FF2D78] text-primary font-body-md text-body-md uppercase p-3 transition-all placeholder:text-outline-variant" id="promo_code" placeholder="ENTER PROMO CODE" type="text"/>
+</div>
+<button class="bg-[#2a2a2a] border border-outline hover:border-primary-container hover:text-primary-container text-on-surface uppercase font-label-xl text-label-xl px-4 transition-colors">APPLY</button>
+</div>
+<div class="border-t border-primary-fixed-dim pt-stack-sm flex justify-between items-end mb-stack-md">
+<span class="font-headline-lg text-headline-md uppercase text-primary">TOTAL</span>
+<span class="font-label-xl text-[36px] text-primary-container leading-none">₹24,698</span>
+</div>
+<button class="w-full bg-primary-container text-[#0A0A0A] font-label-xl text-label-xl uppercase py-4 border-2 border-primary-container btn-glitch hover:bg-[#0A0A0A] hover:text-primary-container transition-colors relative overflow-hidden group">
+<span class="relative z-10">PROCEED TO CHECKOUT</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer aria-label="Footer" class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full py-stack-lg px-margin-mobile md:px-margin-desktop bg-background border-t border-primary-fixed-dim dark:border-primary-fixed-dim mt-auto">
+<div class="col-span-1">
+<span class="font-display-hero text-headline-lg text-primary dark:text-primary uppercase tracking-tighter">FRKWEAR</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-stack-md items-center justify-end">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">TERMS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">PRIVACY</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">SHIPPING</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">RETURNS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">CONTACT</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-stack-md text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md text-center md:text-left">
+            ©2024 FRKWEAR VOID-SYSTEMS ALL RIGHTS RESERVED
+        </div>
+</footer>
+</body></html>

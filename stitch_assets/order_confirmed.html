@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FRKWEAR | Order Confirmed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&amp;family=Space+Grotesk:wght@700&amp;family=Bebas+Neue&amp;family=DM+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#e00363",
+                        "on-primary-fixed": "#161f00",
+                        "secondary-fixed": "#ffd9df",
+                        "tertiary-fixed-dim": "#d1bcff",
+                        "on-tertiary-container": "#782bfc",
+                        "on-tertiary-fixed": "#24005b",
+                        "background": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#4f6600",
+                        "primary-fixed-dim": "#a8d700",
+                        "outline": "#8e9479",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3939",
+                        "inverse-on-surface": "#313030",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4caac",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#fff6f6",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#546d00",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#eaddff",
+                        "surface-container": "#201f1f",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "surface": "#131313",
+                        "surface-tint": "#a8d700",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb1c0",
+                        "on-tertiary-fixed-variant": "#5700c8",
+                        "primary-container": "#c0f500",
+                        "surface-container-highest": "#353534",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#434933",
+                        "on-tertiary": "#3d0090",
+                        "primary": "#ffffff",
+                        "tertiary-container": "#eaddff",
+                        "on-secondary-fixed": "#3f0017",
+                        "on-primary": "#273500",
+                        "secondary": "#ffb1c0",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#90003d",
+                        "on-background": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-fixed": "#c0f500",
+                        "on-secondary": "#660029"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "16px",
+                        "margin-desktop": "64px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["DM Sans"],
+                        "display-hero-mobile": ["Syne"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-hero": ["Syne"],
+                        "body-lg": ["DM Sans"],
+                        "label-xl": ["Bebas Neue"],
+                        "headline-md": ["Space Grotesk"],
+                        "label-md": ["Bebas Neue"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-hero-mobile": ["48px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-hero": ["80px", {"lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-xl": ["28px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["18px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glitch-text {
+            position: relative;
+        }
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+        .glitch-text::before {
+            left: -2px;
+            text-shadow: -2px 0 #FF2D78;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            left: 2px;
+            text-shadow: -2px 0 #C8FF00;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim {
+            0% { clip: rect(20px, 9999px, 83px, 0); }
+            20% { clip: rect(65px, 9999px, 14px, 0); }
+            40% { clip: rect(4px, 9999px, 54px, 0); }
+            60% { clip: rect(98px, 9999px, 34px, 0); }
+            80% { clip: rect(45px, 9999px, 73px, 0); }
+            100% { clip: rect(12px, 9999px, 99px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(15px, 9999px, 95px, 0); }
+            20% { clip: rect(54px, 9999px, 24px, 0); }
+            40% { clip: rect(9px, 9999px, 45px, 0); }
+            60% { clip: rect(88px, 9999px, 14px, 0); }
+            80% { clip: rect(35px, 9999px, 83px, 0); }
+            100% { clip: rect(2px, 9999px, 69px, 0); }
+        }
+        .brutal-border {
+            border: 1px solid #C8FF00;
+        }
+        .btn-primary {
+            background-color: #C8FF00;
+            color: #0A0A0A;
+            border: 2px solid #C8FF00;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0A0A0A;
+            color: #C8FF00;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px #C8FF00;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden pt-16">
+<!-- TopNavBar: Suppressed. Intent: Linear/Transactional/Success. Contextual rule: Hide shell on confirmation screens to focus on the canvas. -->
+<main class="px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="flex flex-col items-center justify-center text-center space-y-stack-md py-stack-lg">
+<div class="inline-block px-4 py-1 brutal-border bg-black text-[#C8FF00] font-label-md text-label-md uppercase tracking-widest mb-4">
+                TRANSACTION #FW-9924-X
+            </div>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-primary uppercase glitch-text" data-text="ORDER CONFIRMED.">
+                ORDER CONFIRMED.
+            </h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant max-w-2xl">
+                YOU JUST MADE A STATEMENT. YOUR GEAR IS ENTERING THE VOID.
+            </p>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- Details Card (Bento Style) -->
+<div class="lg:col-span-8 brutal-border bg-[#141414] p-stack-md relative overflow-hidden group">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase mb-stack-md relative z-10">WHAT YOU GRABBED</h2>
+<div class="flex flex-col gap-stack-sm relative z-10">
+<!-- Item 1 -->
+<div class="flex items-center gap-gutter p-unit bg-black border border-outline-variant hover:border-[#FF2D78] transition-colors">
+<div class="w-24 h-24 bg-surface-container-high shrink-0 overflow-hidden brutal-border relative">
+<div class="absolute inset-0 bg-[#C8FF00] opacity-20 mix-blend-color"></div>
+<img alt="Black oversized hoodie with glitch graphic" class="w-full h-full object-cover grayscale contrast-125" data-alt="A gritty, high-contrast studio shot of an oversized black streetwear hoodie featuring a chaotic, neon-pink and lime green glitch graphic on the back. The lighting is harsh, casting sharp shadows on a pure void black background, emphasizing the raw, y2k chaos aesthetic. The texture of the heavy cotton fabric is clearly visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-47l5E9axm_SfZscLFriWKFVOC685jtJAqeTkjOhiczIOULjlo9RYjiA7gpKxrc6oJCSBwZq2rNrJ4PXJyUbEmdVST4P_QUb2SCP1iEtLbG0LJpJ5p7D4colixN8qtzvtlHZ2HTRQZfVY46PuPFyMV6QXgYJUls7gnv0THrgqjlP8ciaJ4HEnBUNFDnoLxXDA7zv_6g8yZPYwuOKoz3xLMabYS0XFLSTeUw-jB_RM9TPZmmQvSVJBG00niYDUaTMao2gNItQynGE"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-body-lg text-body-lg text-primary font-bold uppercase">VOIDWALKER HOODIE</h3>
+<p class="text-on-surface-variant text-sm">SIZE: L | COLOR: V-BLACK</p>
+</div>
+<div class="font-label-xl text-label-xl text-[#C8FF00] px-gutter">
+                            $120
+                        </div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-gutter p-unit bg-black border border-outline-variant hover:border-[#FF2D78] transition-colors">
+<div class="w-24 h-24 bg-surface-container-high shrink-0 overflow-hidden brutal-border relative">
+<div class="absolute inset-0 bg-[#FF2D78] opacity-20 mix-blend-color"></div>
+<img alt="Chunky black sneakers with neon accents" class="w-full h-full object-cover grayscale contrast-125" data-alt="A stylized product shot of chunky, aggressive brutalist sneakers in matte black with striking neon chartreuse accents. The shoes are suspended in mid-air against a deep black background, illuminated by an intense overhead spotlight that highlights the sharp geometric lines and thick soles. The image has a subtle chromatic aberration effect applied to the edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpTq0hZsdbp80_AW_XWT3nhZ8v8Jx4XnJlaA86upzpAHOrL4nhJNkyHXHO8sH3bE8-SSOw-HL-cIwNzKIHxE4KUswB9ClE_SiwDlercIrSVjxiF1htaThJyYVJIEZ4ehYdIKjF7e8l0A4RL2zsmOG0-VLHrBlxtjMXdGJy_lbd6tpui3ZJVZF78ahHTQK6wBcaHJCgT9VJ_fDUnRI4-59-oZHaIADdPjr5Wel1QSacaLTyn_mxcEbhd4HP_zxOFkQvCxPT_7_g4wM"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-body-lg text-body-lg text-primary font-bold uppercase">PROTOCOL SNEAKERS</h3>
+<p class="text-on-surface-variant text-sm">SIZE: 10 | COLOR: ACID</p>
+</div>
+<div class="font-label-xl text-label-xl text-[#C8FF00] px-gutter">
+                            $185
+                        </div>
+</div>
+</div>
+<div class="mt-stack-md pt-stack-sm border-t border-outline-variant flex justify-between items-end relative z-10">
+<div class="font-body-md text-on-surface-variant uppercase">TOTAL (INC. SHIPPING)</div>
+<div class="font-display-hero-mobile text-headline-lg md:text-display-hero-mobile text-primary glitch-text" data-text="$305.00">$305.00</div>
+</div>
+</div>
+<!-- Timeline & Next Steps Sidebar -->
+<div class="lg:col-span-4 flex flex-col gap-stack-md">
+<!-- Timeline Tracker -->
+<div class="brutal-border bg-black p-stack-md flex flex-col">
+<h3 class="font-label-xl text-label-xl text-[#F0F0F0] uppercase mb-stack-sm">STATUS SEQUENCE</h3>
+<div class="flex flex-col gap-unit relative pl-6 border-l-2 border-[#333]">
+<!-- Step 1 Active -->
+<div class="relative py-2">
+<div class="absolute -left-[29px] top-3 w-4 h-4 rounded-full bg-[#C8FF00] animate-pulse"></div>
+<div class="font-body-lg text-primary font-bold uppercase">ORDER PLACED</div>
+<div class="text-xs text-on-surface-variant">SIGNAL RECEIVED.</div>
+</div>
+<!-- Step 2 -->
+<div class="relative py-2 opacity-50">
+<div class="absolute -left-[29px] top-3 w-4 h-4 rounded-full bg-[#333]"></div>
+<div class="font-body-lg text-on-surface font-bold uppercase">PRODUCTION</div>
+<div class="text-xs text-on-surface-variant">ASSEMBLING THE PIECES.</div>
+</div>
+<!-- Step 3 -->
+<div class="relative py-2 opacity-50">
+<div class="absolute -left-[29px] top-3 w-4 h-4 rounded-full bg-[#333]"></div>
+<div class="font-body-lg text-on-surface font-bold uppercase">SHIPPED</div>
+<div class="text-xs text-on-surface-variant">ENTERING TRANSIT.</div>
+</div>
+</div>
+</div>
+<!-- Action Cards -->
+<div class="grid grid-cols-1 gap-unit">
+<a class="btn-primary font-label-md text-label-md p-stack-sm text-center flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+                        TRACK ORDER
+                    </a>
+<a class="brutal-border bg-[#141414] text-primary hover:bg-[#FF2D78] hover:text-black hover:border-[#FF2D78] transition-all duration-200 font-label-md text-label-md p-stack-sm text-center uppercase flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">share</span>
+                        REFER &amp; EARN
+                    </a>
+<a class="border border-outline-variant text-on-surface-variant hover:text-primary hover:border-primary transition-colors font-body-md p-stack-sm text-center uppercase text-sm" href="#">
+                        BACK TO SHOP
+                    </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer: Suppressed on standard transactional success pages unless explicitly requested, but often kept minimal. Applying standard site footer as requested by JSON structure rules, but in a real scenario might be simplified. -->
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg w-full py-stack-lg px-margin-mobile md:px-margin-desktop bg-background border-t border-primary-fixed-dim dark:border-primary-fixed-dim mt-stack-lg">
+<div class="font-display-hero text-headline-lg text-primary dark:text-primary uppercase tracking-tighter col-span-1 md:col-span-4 mb-4">
+            FRKWEAR
+        </div>
+<div class="col-span-1 md:col-span-4 flex flex-wrap gap-gutter">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">TERMS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">PRIVACY</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">SHIPPING</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">RETURNS</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md hover:text-secondary-container transition-colors duration-150 focus:ring-2 focus:ring-secondary-container focus:ring-offset-2 focus:ring-offset-background" href="#">CONTACT</a>
+</div>
+<div class="col-span-1 md:col-span-4 text-on-surface-variant text-sm mt-stack-md font-body-md">
+            ©2024 FRKWEAR VOID-SYSTEMS ALL RIGHTS RESERVED
+        </div>
+</footer>
+</body></html>
