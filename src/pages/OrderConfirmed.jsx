@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import GlitchText from '../components/ui/GlitchText'
@@ -9,6 +9,8 @@ import { products } from '../data/products'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export default function OrderConfirmed() {
+  const [searchParams] = useSearchParams()
+  const orderId = searchParams.get('id') || 'FRK-PENDING'
   const canvasRef = useRef(null)
   const titleContainerRef = useRef(null)
 
@@ -110,7 +112,7 @@ export default function OrderConfirmed() {
         </div>
         
         <span className="bg-lime text-void font-price text-xl px-4 py-1.5 font-bold tracking-widest select-none">
-          ORDER #FRK-9023485
+          ORDER #{orderId}
         </span>
       </div>
 

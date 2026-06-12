@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { useSplash } from '../context/SplashContext'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import GlitchText from '../components/ui/GlitchText'
@@ -11,8 +11,10 @@ import MarqueeTicker from '../components/ui/MarqueeTicker'
 import ThreeProductViewer from '../components/product/ThreeProductViewer'
 import ProductCarousel from '../components/product/ProductCarousel'
 import SplitFlapNumber from '../components/countdown/SplitFlapNumber'
-import { products } from '../data/products'
-import { ArrowRight, Shirt, HelpCircle, Truck, RefreshCw } from 'lucide-react'
+import { products as fallbackProducts } from '../data/products'
+import { Shirt, Truck, RefreshCw } from 'lucide-react'
+import { useContent } from '../context/ContentContext'
+import { getProducts } from '../lib/api'
 
 // Register GSAP ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -25,62 +27,129 @@ export default function Home() {
   const genderRef = useRef(null)
   const ugcRef = useRef(null)
 
-  // Countdown timer calculations
-  const [timeLeft, setTimeLeft] = useState({ days: 3, hours: 12, minutes: 45, seconds: 9 })
+  // 1. Fetch site content values via useContent hook
+  const heroSubtitle = useContent('hero_subtitle', 'Limited drops. No reruns. Built different.')
+  const heroCtaPrimary = useContent('hero_cta_primary', 'SHOP NOW')
+  const heroCtaSecondary = useContent('hero_cta_secondary', 'EXPLORE DROPS')
+  
+  const categoryHoodiesImage = useContent('category_hoodies_image', 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?auto=format&fit=crop&w=800&q=80')
+  const categoryTshirtsImage = useContent('category_tshirts_image', 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80')
+  const categoryFullsetsImage = useContent('category_fullsets_image', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80')
+  
+  const weeklyDemandHeading = useContent('weekly_demand_heading', 'WEEKLY DEMAND')
+  const weeklyDemandSubheading = useContent('weekly_demand_subheading', 'TRENDING NOW')
+  
+  const statementLine1 = useContent('statement_line1', "WE DON'T MAKE CLOTHES.")
+  const statementLine2 = useContent('statement_line2', 'WE MAKE STATEMENTS.')
+  
+  const featureCard1Title = useContent('feature_card1_title', '100% UNISEX FITS')
+  const featureCard1Body = useContent('feature_card1_body', 'Boxy silhouettes crafted to break binary sizing limitations.')
+  const featureCard2Title = useContent('feature_card2_title', 'PRINT ON DEMAND')
+  const featureCard2Body = useContent('feature_card2_body', 'Zero inventory waste, stitched only when desired.')
+  const featureCard3Title = useContent('feature_card3_title', 'RAW GRAPHICS')
+  const featureCard3Body = useContent('feature_card3_body', 'Heavy screen-printed digital textures that last.')
+  
+  const genderHimImage = useContent('gender_him_image', 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=800&q=80')
+  const genderHerImage = useContent('gender_her_image', 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80')
+  
+  const nextDropTargetDate = useContent('next_drop_target_date', '2026-07-01T00:00:00.000Z')
+  const nextDropLabel = useContent('next_drop_label', 'NEXT DROP IN:')
+  
+  const ugcHeading = useContent('ugc_heading', 'THE CULTURE IS WEARING US')
+  const ugcInstagramHandle = useContent('ugc_instagram_handle', '@FRKWEAR')
+  
+  const ugc01Image = useContent('ugc_01_image', 'https://images.unsplash.com/photo-1556821840-3a63f15732ce?auto=format&fit=crop&w=300&q=80')
+  const ugc02Image = useContent('ugc_02_image', 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=300&q=80')
+  const ugc03Image = useContent('ugc_03_image', 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=300&q=80')
+  const ugc04Image = useContent('ugc_04_image', 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=300&q=80')
+  const ugc05Image = useContent('ugc_05_image', 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=300&q=80')
+  const ugc06Image = useContent('ugc_06_image', 'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=300&q=80')
+
+  // 2. Load products from backend for carousel
+  const [featuredProducts, setFeaturedProducts] = useState([])
+  useEffect(() => {
+    getProducts()
+      .then(all => {
+        setFeaturedProducts(all.filter(p => p.featured))
+      })
+      .catch(err => {
+        console.error('Failed to fetch products for home carousel, falling back:', err)
+        setFeaturedProducts(fallbackProducts.filter(p => p.featured || p.id === 'frk-001'))
+      })
+  }, [])
+
+  // 3. Countdown timer calculations based on nextDropTargetDate
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, isLive: false })
   
   useEffect(() => {
+    const calculateTimeLeft = () => {
+      const difference = +new Date(nextDropTargetDate) - +new Date();
+      let newTimeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0, isLive: true };
+
+      if (difference > 0) {
+        newTimeLeft = {
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+          isLive: false
+        };
+      }
+      return newTimeLeft;
+    };
+
+    // Calculate immediately and set interval
+    setTimeLeft(calculateTimeLeft());
     const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
-        if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        if (prev.hours > 0) return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        if (prev.days > 0) return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
-        clearInterval(timer);
-        return prev;
-      })
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [nextDropTargetDate]);
 
   // Parallax Hero and Statement Wipe effects
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Statement word clip-path wipe reveal
-    const words = statementRef.current.querySelectorAll('.reveal-word');
-    gsap.fromTo(words,
-      { clipPath: "inset(100% 0% 0% 0%)" },
-      {
-        clipPath: "inset(0% 0% 0% 0%)",
-        stagger: 0.08,
-        duration: 0.4,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: statementRef.current,
-          start: "top 75%",
-          toggleActions: "play none none reverse"
+    // Statement word reveal animation
+    const words = statementRef.current?.querySelectorAll('.reveal-word');
+    if (words && words.length > 0) {
+      gsap.fromTo(words,
+        { clipPath: "inset(100% 0% 0% 0%)" },
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+          stagger: 0.08,
+          duration: 0.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: statementRef.current,
+            start: "top 75%",
+            toggleActions: "play none none reverse"
+          }
         }
-      }
-    );
+      );
+    }
 
-    // UGC tiles fan in animation
-    const tiles = ugcRef.current.querySelectorAll('.ugc-tile');
-    gsap.fromTo(tiles,
-      { x: 0, y: 0, scale: 0, opacity: 0 },
-      {
-        x: (idx, target) => parseFloat(target.dataset.x) || 0,
-        y: (idx, target) => parseFloat(target.dataset.y) || 0,
-        scale: 1,
-        opacity: 1,
-        stagger: 0.07,
-        duration: 0.6,
-        ease: "back.out(1.2)",
-        scrollTrigger: {
-          trigger: ugcRef.current,
-          start: "top 80%"
+    // UGC tiles fan-in reveal
+    const tiles = ugcRef.current?.querySelectorAll('.ugc-tile');
+    if (tiles && tiles.length > 0) {
+      gsap.fromTo(tiles,
+        { x: 0, y: 0, scale: 0, opacity: 0 },
+        {
+          x: (idx, target) => parseFloat(target.dataset.x) || 0,
+          y: (idx, target) => parseFloat(target.dataset.y) || 0,
+          scale: 1,
+          opacity: 1,
+          stagger: 0.07,
+          duration: 0.6,
+          ease: "back.out(1.2)",
+          scrollTrigger: {
+            trigger: ugcRef.current,
+            start: "top 80%"
+          }
         }
-      }
-    );
+      );
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -117,7 +186,7 @@ export default function Home() {
             transition={{ delay: 0.8, duration: 0.5 }}
             className="font-heading text-base md:text-lg text-muted uppercase tracking-widest mb-8"
           >
-            Limited drops. No reruns. Built different.
+            {heroSubtitle}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -128,12 +197,12 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-6 justify-center pointer-events-auto"
           >
             <AnimatedButton
-              label="SHOP NOW"
+              label={heroCtaPrimary}
               onClick={() => navigate('/shop')}
               variant="primary"
             />
             <AnimatedButton
-              label="EXPLORE DROPS"
+              label={heroCtaSecondary}
               onClick={() => navigate('/shop?filter=New')}
               variant="outline"
             />
@@ -155,18 +224,17 @@ export default function Home() {
       {/* 3. 3D PRODUCT SHOWCASE */}
       <section className="min-h-[70vh] w-full bg-void flex flex-col md:flex-row items-center justify-center py-20 px-6 max-w-7xl mx-auto gap-12">
         <div className="w-full md:w-1/2 flex flex-col justify-center text-left">
-          <GlitchText text="CRAFTED FOR THE CULTURE" className="text-4xl md:text-6xl font-bold mb-6" />
+          <GlitchText text={useContent('showcase_heading', 'CRAFTED FOR THE CULTURE')} className="text-4xl md:text-6xl font-bold mb-6" />
           <p className="font-body text-base md:text-lg text-muted max-w-lg leading-relaxed">
-            We don't do mass production. Each piece is designed digitally in our glitch laboratory and print-on-demand crafted only when you claim it. Direct thread inject, vivid pixels, Y2K core weight.
+            {useContent('showcase_body', "We don't do mass production. Each piece is designed digitally in our glitch laboratory and print-on-demand crafted only when you claim it. Direct thread inject, vivid pixels, Y2K core weight.")}
           </p>
         </div>
         <div className="w-full md:w-1/2 h-[450px] relative border border-lime/20 bg-surface/40">
-          {/* Lazy load simulation */}
           <ThreeProductViewer mode="cloth" />
         </div>
       </section>
 
-      {/* 5. CATEGORY GRID */}
+      {/* 4. CATEGORY GRID */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="text-left mb-16">
           <GlitchText text="PICK YOUR FIT" className="text-4xl md:text-5xl font-bold" />
@@ -180,7 +248,7 @@ export default function Home() {
             onClick={() => navigate('/shop?filter=Hoodies')}
           >
             <div className="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-20 group-hover:opacity-40"
-                 style={{ backgroundImage: `url('https://images.unsplash.com/photo-1556821840-3a63f15732ce?auto=format&fit=crop&w=800&q=80')` }} />
+                 style={{ backgroundImage: `url('${categoryHoodiesImage}')` }} />
             <h3 className="font-price text-4xl text-lime relative z-10">HOODIES</h3>
             <div className="self-end text-lime text-3xl group-hover:translate-x-2 transition-transform relative z-10">→</div>
           </motion.div>
@@ -192,7 +260,7 @@ export default function Home() {
             onClick={() => navigate('/shop?filter=T-Shirts')}
           >
             <div className="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-20 group-hover:opacity-40"
-                 style={{ backgroundImage: `url('https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80')` }} />
+                 style={{ backgroundImage: `url('${categoryTshirtsImage}')` }} />
             <h3 className="font-price text-4xl text-lime relative z-10">T-SHIRTS</h3>
             <div className="self-end text-lime text-3xl group-hover:translate-x-2 transition-transform relative z-10">→</div>
           </motion.div>
@@ -204,7 +272,7 @@ export default function Home() {
             onClick={() => navigate('/shop?filter=Full%20Sets')}
           >
             <div className="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-20 group-hover:opacity-40"
-                 style={{ backgroundImage: `url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80')` }} />
+                 style={{ backgroundImage: `url('${categoryFullsetsImage}')` }} />
             <h3 className="font-price text-4xl text-lime relative z-10">FULL SETS</h3>
             <div className="self-end text-lime text-3xl group-hover:translate-x-2 transition-transform relative z-10">→</div>
           </motion.div>
@@ -214,11 +282,11 @@ export default function Home() {
       {/* 5. TRENDING NOW */}
       <section className="py-20 bg-surface/20 border-t border-b border-lime/10">
         <div className="max-w-7xl mx-auto px-6 text-left mb-10">
-          <span className="font-heading text-xs text-muted font-bold tracking-widest block mb-2">TRENDING NOW</span>
-          <GlitchText text="WEEKLY DEMAND" className="text-4xl md:text-5xl font-bold" />
+          <span className="font-heading text-xs text-muted font-bold tracking-widest block mb-2">{weeklyDemandSubheading}</span>
+          <GlitchText text={weeklyDemandHeading} className="text-4xl md:text-5xl font-bold" />
         </div>
         <div className="max-w-7xl mx-auto">
-          <ProductCarousel products={products} />
+          <ProductCarousel products={featuredProducts.length > 0 ? featuredProducts : fallbackProducts} />
         </div>
       </section>
 
@@ -226,25 +294,25 @@ export default function Home() {
       <section ref={statementRef} className="py-32 bg-void text-center px-6">
         <div className="max-w-4xl mx-auto flex flex-col gap-6">
           <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight">
-            <span className="reveal-word block text-offwhite">WE DON'T MAKE CLOTHES.</span>
-            <span className="reveal-word block text-lime">WE MAKE STATEMENTS.</span>
+            <span className="reveal-word block text-offwhite">{statementLine1}</span>
+            <span className="reveal-word block text-lime">{statementLine2}</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
             <div className="flex flex-col items-center text-center p-6 border border-muted/10">
               <Shirt className="w-10 h-10 text-lime mb-4" />
-              <h4 className="font-heading font-bold text-offwhite mb-2 uppercase">100% UNISEX FITS</h4>
-              <p className="font-body text-sm text-muted">Boxy silhouettes crafted to break binary sizing limitations.</p>
+              <h4 className="font-heading font-bold text-offwhite mb-2 uppercase">{featureCard1Title}</h4>
+              <p className="font-body text-sm text-muted">{featureCard1Body}</p>
             </div>
             <div className="flex flex-col items-center text-center p-6 border border-muted/10">
               <Truck className="w-10 h-10 text-lime mb-4" />
-              <h4 className="font-heading font-bold text-offwhite mb-2 uppercase">PRINT ON DEMAND</h4>
-              <p className="font-body text-sm text-muted">Zero inventory waste, stitched only when desired.</p>
+              <h4 className="font-heading font-bold text-offwhite mb-2 uppercase">{featureCard2Title}</h4>
+              <p className="font-body text-sm text-muted">{featureCard2Body}</p>
             </div>
             <div className="flex flex-col items-center text-center p-6 border border-muted/10">
               <RefreshCw className="w-10 h-10 text-lime mb-4" />
-              <h4 className="font-heading font-bold text-offwhite mb-2 uppercase">RAW GRAPHICS</h4>
-              <p className="font-body text-sm text-muted">Heavy screen-printed digital textures that last.</p>
+              <h4 className="font-heading font-bold text-offwhite mb-2 uppercase">{featureCard3Title}</h4>
+              <p className="font-body text-sm text-muted">{featureCard3Body}</p>
             </div>
           </div>
         </div>
@@ -265,7 +333,7 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-cover bg-center filter grayscale opacity-25 group-hover:scale-105 transition-all duration-[600ms]"
-               style={{ backgroundImage: `url('https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=800&q=80')` }} />
+               style={{ backgroundImage: `url('${genderHimImage}')` }} />
           <GlitchText text="FOR HIM" className="text-4xl md:text-6xl font-bold relative z-10" />
           <AnimatedButton label="SHOP HIM" variant="outline" className="mt-6 scale-90 relative z-10" />
         </div>
@@ -291,7 +359,7 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-cover bg-center filter grayscale opacity-25 group-hover:scale-105 transition-all duration-[600ms]"
-               style={{ backgroundImage: `url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80')` }} />
+               style={{ backgroundImage: `url('${genderHerImage}')` }} />
           <GlitchText text="FOR HER" className="text-4xl md:text-6xl font-bold relative z-10" />
           <AnimatedButton label="SHOP HER" variant="outline" className="mt-6 scale-90 relative z-10" />
         </div>
@@ -302,25 +370,33 @@ export default function Home() {
         <div className="absolute inset-0 bg-radial-gradient from-violet/8 via-transparent to-transparent pointer-events-none" />
         
         <div className="relative z-10 flex flex-col items-center text-center px-6">
-          <span className="font-heading text-sm text-muted font-bold tracking-widest block mb-6 uppercase">NEXT DROP IN:</span>
+          <span className="font-heading text-sm text-muted font-bold tracking-widest block mb-6 uppercase">{nextDropLabel}</span>
           
           <div className="flex flex-wrap gap-6 justify-center">
-            <div className="flex flex-col items-center">
-              <SplitFlapNumber value={timeLeft.days.toString().padStart(2, '0')} />
-              <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Days</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <SplitFlapNumber value={timeLeft.hours.toString().padStart(2, '0')} />
-              <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Hours</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <SplitFlapNumber value={timeLeft.minutes.toString().padStart(2, '0')} />
-              <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Minutes</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <SplitFlapNumber value={timeLeft.seconds.toString().padStart(2, '0')} />
-              <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Seconds</span>
-            </div>
+            {timeLeft.isLive ? (
+              <span className="font-price text-4xl text-lime uppercase tracking-widest animate-pulse">
+                DROP IS LIVE
+              </span>
+            ) : (
+              <>
+                <div className="flex flex-col items-center">
+                  <SplitFlapNumber value={timeLeft.days.toString().padStart(2, '0')} />
+                  <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Days</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <SplitFlapNumber value={timeLeft.hours.toString().padStart(2, '0')} />
+                  <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Hours</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <SplitFlapNumber value={timeLeft.minutes.toString().padStart(2, '0')} />
+                  <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Minutes</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <SplitFlapNumber value={timeLeft.seconds.toString().padStart(2, '0')} />
+                  <span className="font-heading text-xs text-muted uppercase tracking-widest mt-2">Seconds</span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
@@ -328,18 +404,18 @@ export default function Home() {
       {/* 9. UGC STRIP */}
       <section ref={ugcRef} className="py-24 px-6 max-w-7xl mx-auto flex flex-col items-center">
         <div className="text-center mb-16">
-          <GlitchText text="THE CULTURE IS WEARING US" className="text-3xl md:text-5xl font-bold" />
+          <GlitchText text={ugcHeading} className="text-3xl md:text-5xl font-bold" />
         </div>
 
         {/* 6-tile masonry grid fanned in via ScrollTrigger */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-4xl min-h-[500px]">
           {[
-            { tag: "UGC_01", x: "-30", y: "-20", rot: "1.2", img: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?auto=format&fit=crop&w=300&q=80" },
-            { tag: "UGC_02", x: "20", y: "-40", rot: "-1.5", img: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=300&q=80" },
-            { tag: "UGC_03", x: "-40", y: "30", rot: "1.4", img: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=300&q=80" },
-            { tag: "UGC_04", x: "30", y: "20", rot: "-1.1", img: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=300&q=80" },
-            { tag: "UGC_05", x: "-20", y: "-30", rot: "1.5", img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=300&q=80" },
-            { tag: "UGC_06", x: "40", y: "-20", rot: "-1.3", img: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=300&q=80" }
+            { tag: "UGC_01", x: "-30", y: "-20", rot: "1.2", img: ugc01Image },
+            { tag: "UGC_02", x: "20", y: "-40", rot: "-1.5", img: ugc02Image },
+            { tag: "UGC_03", x: "-40", y: "30", rot: "1.4", img: ugc03Image },
+            { tag: "UGC_04", x: "30", y: "20", rot: "-1.1", img: ugc04Image },
+            { tag: "UGC_05", x: "-20", y: "-30", rot: "1.5", img: ugc05Image },
+            { tag: "UGC_06", x: "40", y: "-20", rot: "-1.3", img: ugc06Image }
           ].map((tile, idx) => (
             <div
               key={idx}
@@ -365,7 +441,7 @@ export default function Home() {
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
-          <span className="font-body text-sm md:text-base text-muted uppercase tracking-widest font-bold">TAG US @FRKWEAR FOR A FEATURE</span>
+          <span className="font-body text-sm md:text-base text-muted uppercase tracking-widest font-bold">TAG US {ugcInstagramHandle} FOR A FEATURE</span>
         </div>
       </section>
 

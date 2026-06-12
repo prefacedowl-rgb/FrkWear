@@ -26,8 +26,12 @@
 @layer base {
   * {
     border-radius: 0px !important;
-    cursor: none !important; /* Hide native cursor globally for desktop custom cursor */
     box-sizing: border-box;
+  }
+
+  /* Hide native cursor globally only when NOT in admin panel */
+  body:not(.admin-mode) * {
+    cursor: none !important;
   }
   
   html, body {

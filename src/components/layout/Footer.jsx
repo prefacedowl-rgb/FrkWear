@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import GlitchText from '../ui/GlitchText'
+import { useContent } from '../../context/ContentContext'
 
 export default function Footer() {
   const shopLinks = [
@@ -113,8 +114,9 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto pt-8 border-t border-muted/20 flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Brand logo in footer */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 flex-wrap">
           <GlitchText text="FRKWEAR" className="text-xl font-bold" />
+          <span className="text-lime text-xs font-mono tracking-widest">{useContent('footer_tagline', 'BUILT DIFFERENT. WORN LOUD.')}</span>
           <span className="text-muted text-sm font-mono">© {new Date().getFullYear()} ALL RIGHTS RESERVED.</span>
         </div>
 

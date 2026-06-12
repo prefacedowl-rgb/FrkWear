@@ -1,5 +1,5 @@
-import React, { lazy, Suspense, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import React, { lazy, Suspense, useState, useEffect } from 'react'
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
 // Layout components (static imports)
@@ -15,6 +15,7 @@ import CartDrawer from './components/cart/CartDrawer'
 
 // Context
 import { SplashContext } from './context/SplashContext'
+import { ContentProvider } from './context/ContentContext'
 
 // Pages (lazy loaded)
 const Home = lazy(() => import('./pages/Home'))
@@ -27,12 +28,38 @@ const About = lazy(() => import('./pages/About'))
 const Help = lazy(() => import('./pages/Help'))
 const SizeGuide = lazy(() => import('./pages/SizeGuide'))
 const NotFound = lazy(() => import('./pages/NotFound'))
+const AdminApp = lazy(() => import('./admin/AdminApp'))
+
+// Redirect direct non-hash admin URLs to their hash router equivalents
+const adminIndex = window.location.pathname.indexOf('/admin');
+if (adminIndex !== -1 && !window.location.hash.startsWith('#/admin')) {
+  const base = window.location.pathname.substring(0, adminIndex);
+  const subpath = window.location.pathname.substring(adminIndex + 6);
+  window.location.replace(`${window.location.origin}${base}/#/admin${subpath}${window.location.search}`);
+}
 
 function AppContent() {
   const location = useLocation()
-
-  // Exclude full nav/footer on checkout page
+  const isAdmin = location.pathname.startsWith('/admin')
   const isCheckout = location.pathname === '/checkout'
+
+  useEffect(() => {
+    if (isAdmin) {
+      document.body.classList.add('admin-mode')
+    } else {
+      document.body.classList.remove('admin-mode')
+    }
+  }, [isAdmin])
+
+  if (isAdmin) {
+    return (
+      <Suspense fallback={<div className="fixed inset-0 bg-void" />}>
+        <Routes>
+          <Route path="/admin/*" element={<AdminApp />} />
+        </Routes>
+      </Suspense>
+    )
+  }
 
   return (
     <>
@@ -75,11 +102,13 @@ export default function App() {
   const [splashDone, setSplashDone] = useState(() => Boolean(sessionStorage.getItem('splashShown')))
 
   return (
-    <SplashContext.Provider value={{ splashDone }}>
-      {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
-      <Router>
-        <AppContent />
-      </Router>
-    </SplashContext.Provider>
+    <ContentProvider>
+      <SplashContext.Provider value={{ splashDone }}>
+        {!splashDone && <SplashScreen onDone={() => setSplashDone(true)} />}
+        <Router>
+          <AppContent />
+        </Router>
+      </SplashContext.Provider>
+    </ContentProvider>
   )
 }

@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useCartStore } from '../store/cartStore'
 import GlitchText from '../components/ui/GlitchText'
 import { Lock, Check, Shield } from 'lucide-react'
+import { createOrder, trackEvent } from '../lib/api'
 
 export default function Checkout() {
   const navigate = useNavigate()
@@ -61,13 +62,50 @@ export default function Checkout() {
     }
   }
 
-  const handlePlaceOrder = () => {
+  const handlePlaceOrder = async () => {
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+    try {
+      const shippingAmount = deliveryMethod === 'express' ? 249 : (freeShipping ? 0 : 99)
+      const subtotal = totalPrice
+      const finalTotal = subtotal + shippingAmount
+
+      const payload = {
+        items: items.map(item => ({
+          productId: item.id,
+          name: item.name,
+          price: item.price,
+          quantity: item.qty,
+          size: item.size,
+          color: item.color,
+          imageUrl: item.imageUrl
+        })),
+        subtotal: subtotal,
+        shipping: shippingAmount,
+        total: finalTotal,
+        customer: {
+          name: infoForm.name,
+          email: infoForm.email,
+          phone: infoForm.phone,
+          address: infoForm.address,
+          city: infoForm.city,
+          pincode: infoForm.zip
+        },
+        paymentMethod: paymentMethod
+      }
+
+      const response = await createOrder(payload)
+
+      // Track purchase event in analytics
+      await trackEvent('purchase', { revenue: finalTotal })
+
       clearCart()
-      navigate('/order-confirmed')
-    }, 2000)
+      navigate(`/order-confirmed?id=${response.order_id || response.orderId}`)
+    } catch (err) {
+      console.error('Checkout error:', err)
+      alert(err.message || 'ORDER PLACEMENT FAILED. PLEASE TRY AGAIN.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (items.length === 0) {

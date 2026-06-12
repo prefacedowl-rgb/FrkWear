@@ -4,7 +4,8 @@ import { useSearchParams } from 'react-router-dom'
 import { gsap } from 'gsap'
 import GlitchText from '../components/ui/GlitchText'
 import ProductCard from '../components/product/ProductCard'
-import { products } from '../data/products'
+import { getProducts } from '../lib/api'
+import { products as fallbackProducts } from '../data/products'
 
 const FILTER_OPTIONS = ["All", "Men", "Women", "Hoodies", "T-Shirts", "Full Sets", "New", "Limited"]
 
@@ -16,7 +17,23 @@ export default function Shop() {
   const [visibleCount, setVisibleCount] = useState(4)
   const [isLoadingMore, setIsLoadingMore] = useState(false)
 
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+
   const headerRef = useRef(null)
+
+  useEffect(() => {
+    getProducts()
+      .then(data => {
+        setProducts(data || [])
+        setLoading(false)
+      })
+      .catch(err => {
+        console.error('Failed to load products from API, using fallback:', err)
+        setProducts(fallbackProducts)
+        setLoading(false)
+      })
+  }, [])
 
   // Sync state with query parameters
   useEffect(() => {
@@ -93,30 +110,44 @@ export default function Shop() {
 
       {/* Product Grid */}
       <div className="my-12">
-        <motion.div 
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProducts.slice(0, visibleCount).map((product, idx) => (
-              <motion.div
-                key={product.id}
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.25, delay: idx * 0.03 }}
-              >
-                <ProductCard product={product} />
-              </motion.div>
+        {loading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center w-full">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="w-full aspect-[4/5] bg-surface/50 border border-lime/10 animate-pulse flex flex-col justify-between p-6">
+                <div className="w-full h-2/3 bg-lime/5" />
+                <div className="h-6 bg-lime/10 w-3/4 mt-4" />
+                <div className="h-5 bg-lime/15 w-1/2 mt-2" />
+              </div>
             ))}
-          </AnimatePresence>
-        </motion.div>
-
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-20 font-body text-muted">
-            NO DROPS FOUND MATCHING "{activeFilter.toUpperCase()}".
           </div>
+        ) : (
+          <>
+            <motion.div 
+              layout
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredProducts.slice(0, visibleCount).map((product, idx) => (
+                  <motion.div
+                    key={product.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.25, delay: idx * 0.03 }}
+                  >
+                    <ProductCard product={product} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+
+            {filteredProducts.length === 0 && (
+              <div className="text-center py-20 font-body text-muted">
+                NO DROPS FOUND MATCHING "{activeFilter.toUpperCase()}".
+              </div>
+            )}
+          </>
         )}
       </div>
 

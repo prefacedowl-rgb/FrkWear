@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
+import { trackEvent } from '../../lib/api'
 
 // CRT Flash — renders briefly between page transitions
 function CRTFlash({ onDone }) {
@@ -28,6 +30,14 @@ function CRTFlash({ onDone }) {
 
 export default function PageTransition({ children }) {
   const [showFlash, setShowFlash] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    // Exclude admin panel views if wanted, but standard page views on the storefront are tracked here
+    if (!location.pathname.startsWith('/admin')) {
+      trackEvent('page_view', { path: location.pathname })
+    }
+  }, [location.pathname])
 
   return (
     <>
